@@ -3,7 +3,7 @@
 >##Contents
 
 >1. **Getting Started**
-  1. [Standard I/O](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#standard-input-output-and-error-getting-started)
+  1. [Standard I/O](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#getting-started-standard-input-output-and-error)
   2. [Working with files](Working_with_files.html)
   3. [Command-line Arguments](Command-line_Arguments.html)
 
@@ -60,7 +60,7 @@ print 'total lines read:', len(lines)
 ```
 
 ---
-> ## Working with files `Getting Started`
+## `Getting Started` Working with files
 
 Python built-in `open` function is the standard interface for working with files. `open` returns a file object with familiar methods for performing read/write operations.
 
@@ -178,7 +178,7 @@ totat lines: 14023
 By default, `fileinput.input()` will read all lines from files given as an argument to the script; if no arguments given then defaults to standard input.
 
 ---
-> ## Command-line Arguments `Getting Started`
+## `Getting Started` Command-line Arguments
 
 `sys` module provides `argv` variable containing the list of arguments passed to the script when executed as a command-line application.
 
@@ -278,7 +278,7 @@ $ python grep.py 8080 /etc/services
 ```
 
 ---
-> ###Operating System (OS) Module `Exploring Standard Modules`
+## `Exploring Standard Modules` Operating System (OS) Module
 
 Python built-in `os` module exposes operating system dependent functionality in a portable way, thus works across many different platforms.
 
@@ -338,7 +338,7 @@ import os
 - `os.path.getsize(path)` return size (in bytes) for a given path.
 - `os.path.isfile(path)`, `os.path.isdir(path)` returns `True` or `False` if path is file or a directory.
 - `os.path.getctime(path)`,  `os.path.getmtime(path)` Similar to `os.stat(path).ctime`, `os.stat(path).mtime()`
-- Learn more [os.path documentation](https://docs.python.org/2.7/library/os.path.html)
+- Learn more at [os.path documentation](https://docs.python.org/2.7/library/os.path.html)
 
 > ###### Example
 
@@ -426,7 +426,7 @@ $ python filesizes.py .
 #### [Learn more about OS module](https://docs.python.org/2.7/library/os.html)
 
 ---
-> ###System-specific Module `Exploring Standard Modules`
+## `Exploring Standard Modules` System-specific Module
 
 Python built-in `sys` module exposes system-specific parameters and functions. This module provides access to some variables used or maintained by the interpreter and functions that interact strongly with the interpreter. `sys` module is always available.
 
@@ -506,7 +506,7 @@ total modules loaded: 42
 #### [Learn more about sys module](https://docs.python.org/2.7/library/sys.html)
 
 ---
-> ### shutil module — High-level file operations `Exploring Standard Modules`
+## `Exploring Standard Modules` shutil module — High-level file operations
 
 The `shutil` module provides high-level operations on files or collection of files. 
 
@@ -525,8 +525,7 @@ The `shutil` module provides high-level operations on files or collection of fil
 #### [Learn more about shutil module](https://docs.python.org/2.7/library/shutil.html)
 
 --
-
-> ### glob module — Unix style pathname pattern expansion `Exploring Standard Modules`
+## `Exploring Standard Modules` glob module — Unix style pathname pattern expansion
 
 The `glob` module finds all the pathnames matching a specified pattern according to the rules used by the Unix shell.
 
@@ -551,7 +550,7 @@ The `glob` module finds all the pathnames matching a specified pattern according
 #### [Learn more about glob module](https://docs.python.org/2.7/library/glob.html)
 
 ---
-> ###time module — Clock time `Exploring Standard Modules`
+## `Exploring Standard Modules` time module — Clock time
 
 The `time` module exposes the time-related functions from the underlying C library.
 
@@ -591,7 +590,7 @@ The `time` module exposes the time-related functions from the underlying C libra
 ```
 #### [Learn more about time module](https://docs.python.org/2.7/library/time.html)
 --
-> ###datetime module — Date and Time Value Manipulation `Exploring Standard Modules`
+## `Exploring Standard Modules` datetime module — Date and Time Value Manipulation
 
 The `datetime` module includes functions and classes for doing date and time parsing, formatting, and arithmetic.
 
@@ -633,7 +632,7 @@ datetime.datetime(2016, 4, 6, 7, 13, 26)
 #### [Learn more about datetime module](https://docs.python.org/2.7/library/datetime.html)
 
 ---
-> ###subprocess module — Subprocess management `Exploring Standard Modules`
+## `Exploring Standard Modules` subprocess module — Subprocess management
 
 The `subprocess` module allows to run new processes, connect to their input/output/error pipes, and obtain their return codes.
 
