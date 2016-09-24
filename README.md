@@ -817,8 +817,6 @@ running command: bc and sending input: 1 + 1
 None
 ```
 
---
-
 ####[Learn more about subprocess module](https://docs.python.org/2.7/library/subprocess.html?highlight=subprocess#module-subprocess)
 
 ## Author
