@@ -3,7 +3,7 @@
 >##Contents
 
 >1. **Getting Started**
-  1. [Standard I/O](Standard_IO.html)
+  1. [Standard I/O](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#standard-input-output-and-error-getting-started)
   2. [Working with files](Working_with_files.html)
   3. [Command-line Arguments](Command-line_Arguments.html)
 
@@ -15,7 +15,7 @@
   5. [Subprocess Module](Subprocess_Module.html)
 
 ---
-> ## Standard Input, Output and Error `Getting Started`
+## `Getting Started` Standard Input, Output and Error
 
 Standard input, output and error (commonly referred as `stdin`, `stdout` and `stderr`) are what's called pipes.
 
