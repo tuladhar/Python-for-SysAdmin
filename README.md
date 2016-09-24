@@ -1,4 +1,5 @@
 #Python for Systems Administrator - Part I
+### Author: [Puru Tuladhar] (github.com/tuladhar)
 
 >##Contents
 
@@ -818,8 +819,5 @@ None
 ```
 
 ####[Learn more about subprocess module](https://docs.python.org/2.7/library/subprocess.html?highlight=subprocess#module-subprocess)
-
-## Author
-- [Puru Tuladhar](github.com/tuladhar)
 
 ##Thank you! ;-)
