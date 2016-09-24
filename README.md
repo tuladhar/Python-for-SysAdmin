@@ -4,15 +4,15 @@
 
 >1. **Getting Started**
   1. [Standard I/O](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#getting-started-standard-input-output-and-error)
-  2. [Working with files](Working_with_files.html)
-  3. [Command-line Arguments](Command-line_Arguments.html)
+  2. [Working with files](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#getting-started-working-with-files)
+  3. [Command-line Arguments](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#getting-started-command-line-arguments)
 
 >2. **Exploring Standard Modules**
-  1. [Operating System (OS) Module](OS_Module.html)
-  2. [System-specific Module](Sys_Module.html)
-  3. [Shell Modules](Shell_Modules.html)
-  4. [Date and Time Modules](Date_and_Time_Module.html)
-  5. [Subprocess Module](Subprocess_Module.html)
+  1. [Operating System (OS) Module](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-operating-system-os-module)
+  2. [System-specific Module](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-system-specific-module)
+  3. [Shell Modules](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-shell-modules)
+  4. [Date and Time Modules](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-date-and-time-modules)
+  5. [Subprocess Module](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-subprocess-module)
 
 ---
 ## `Getting Started` Standard Input, Output and Error
@@ -421,8 +421,6 @@ $ python filesizes.py .
 678 ./filesizes.py 
 ```
 
---
-
 #### [Learn more about OS module](https://docs.python.org/2.7/library/os.html)
 
 ---
@@ -506,7 +504,9 @@ total modules loaded: 42
 #### [Learn more about sys module](https://docs.python.org/2.7/library/sys.html)
 
 ---
-## `Exploring Standard Modules` shutil module — High-level file operations
+## `Exploring Standard Modules` Shell Modules
+
+### shutil module — High-level file operations
 
 The `shutil` module provides high-level operations on files or collection of files. 
 
@@ -521,11 +521,11 @@ The `shutil` module provides high-level operations on files or collection of fil
 
 - `shutil.move(src, dst)` Move src file to dst file or directory.
 
-
 #### [Learn more about shutil module](https://docs.python.org/2.7/library/shutil.html)
 
 --
-## `Exploring Standard Modules` glob module — Unix style pathname pattern expansion
+
+### glob module — Unix style pathname pattern expansion
 
 The `glob` module finds all the pathnames matching a specified pattern according to the rules used by the Unix shell.
 
@@ -550,7 +550,10 @@ The `glob` module finds all the pathnames matching a specified pattern according
 #### [Learn more about glob module](https://docs.python.org/2.7/library/glob.html)
 
 ---
-## `Exploring Standard Modules` time module — Clock time
+
+## `Exploring Standard Modules` Date and Time Modules
+
+### time module — Clock time
 
 The `time` module exposes the time-related functions from the underlying C library.
 
@@ -589,8 +592,10 @@ The `time` module exposes the time-related functions from the underlying C libra
 >>> gmt = '{} {}'.format(time.ctime(), time.tzname[0])
 ```
 #### [Learn more about time module](https://docs.python.org/2.7/library/time.html)
+
 --
-## `Exploring Standard Modules` datetime module — Date and Time Value Manipulation
+
+## datetime module — Date and Time Value Manipulation
 
 The `datetime` module includes functions and classes for doing date and time parsing, formatting, and arithmetic.
 
@@ -632,7 +637,9 @@ datetime.datetime(2016, 4, 6, 7, 13, 26)
 #### [Learn more about datetime module](https://docs.python.org/2.7/library/datetime.html)
 
 ---
-## `Exploring Standard Modules` subprocess module — Subprocess management
+## `Exploring Standard Modules` Subprocess Module 
+
+### subprocess module — Subprocess management
 
 The `subprocess` module allows to run new processes, connect to their input/output/error pipes, and obtain their return codes.
 
