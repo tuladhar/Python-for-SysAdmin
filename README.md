@@ -22,7 +22,7 @@ Standard input, output and error (commonly referred as `stdin`, `stdout` and `st
 
 These pipes are normally connected to the terminal window where you are working.
 
-When printing something (using `print`), it goes to the `stdout` pipe by default; when your program needs to print errors (like a traceback in Python), it goes to the `stderr` pipe; and when your program requires input from a user or other programs, it is goes to the `stdin` pipe.
+When printing something (using `print()`), it goes to the `stdout` pipe by default; when your program needs to print errors (like a traceback in Python), it goes to the `stderr` pipe; and when your program requires input from a user or other programs, it is goes to the `stdin` pipe.
 
 ```bash
 $ cat /etc/passwd | grep /bin/bash
@@ -38,26 +38,26 @@ Python built-in `sys` module provides `stdin`, `stdout` and `stderr` as a file-o
 import sys
 
 # writing to stdout pipe
-print 'Hello, world'
+print ('Hello, world')
 sys.stdout.write('Hello, world\n')
 
 # writing to stderr pipe
-print >> sys.stderr, 'Error occured'
+print (f'>> {sys.stderr}, 'Error occured')
 
 # reading single line from stdin pipe
 sys.stdout.write('Username: ')
 username  = sys.stdin.readline()
-print username
+print (username)
 
 # reading 'n' number of characters from stdin
-print 'Enter few characters and press Ctrl-D'
+print ('Enter few characters and press Ctrl-D')
 data = sys.stdin.read(1024)
-print 'len(data):', len(data)
+print('len(data):', len(data))
 
 # reading lines (separated by newlines) from stdin
-print 'Enter few lines and press Ctrl-D'
+print('Enter few lines and press Ctrl-D')
 lines = sys.stdin.readlines()
-print 'total lines read:', len(lines)
+print ('total lines read:', len(lines))
 ```
 
 ---
@@ -115,7 +115,7 @@ lines = ['1.1.1.1\n', '2.2.2.2\n', '3.3.3.3\n']
 w.writelines(lines)
 w.close()
 ```
---
+---
 ### Handling Errors
 
 All `open` related errors raises `IOError` exception.
@@ -124,10 +124,10 @@ All `open` related errors raises `IOError` exception.
 try:
 	f = open('/etc/passwd')
 except IOError as e:
-	print 'Opps, something went wrong.'
-	print e
+	print ()'Opps, something went wrong.'
+	print (e)
 ```
---
+---
 
 #### Reading `/etc/passwd` and search each line for `/bin/bash` shell; when found print the line number and the line
 
@@ -164,7 +164,7 @@ lines = 0
 for line in fileinput.input():
 	lines += 1
 
-print 'totat lines:', lines
+print('totat lines:', lines)
 ```
 
 >```bash
@@ -191,8 +191,8 @@ By default, `fileinput.input()` will read all lines from files given as an argum
 
 import sys
 
-print 'sys.argv:', sys.argv
-print 'length:', len(argv)
+print ('sys.argv:', sys.argv)
+print ('length:', len(argv))
 ```
 >```bash
 $ python args_01.py --help
@@ -215,7 +215,7 @@ argv_len = len(sys.argv[1:])
 if not argv_len == 2:
 	sys.exit('invalid number of arguments (expected 2, given: {})'.format(argv_len))
 
-print 'two arguments are:', sys.argv[1:]
+print('two arguments are:', sys.argv[1:])
 ```
 >```bash
 $ python args_02.py
@@ -261,7 +261,7 @@ http-alt	8080/udp     # HTTP Alternate (see port 80)
 http-alt	8080/tcp     # HTTP Alternate (see port 80)
 ```
 
---
+---
 
 #### Improvement Exercises
 - Extend `grep.py` to read from a file instead of standard input, and can be run as:
@@ -687,7 +687,7 @@ running command: false
 error: Command 'false' returned non-zero exit status 1
 ```
 
---
+---
 
 ### Capturing Command Output
 
@@ -709,14 +709,14 @@ try:
 except subprocess.CalledProcessError as error:
 	sys.exit('error: {}'.format(error))
 else:
-	print 'success!'
+	print('success!')
 	with open('hosts.txt', 'w') as f:
 		f.write(output)
 ```
 
 By default, `check_output` captures outputs written to `stdout`. Setting the `stderr=subprocess.STDOUT` causes `stderr` outputs to redirected to `stdout`, so errors can be captured as well.
 
---
+---
 ###  Working directory with Popen
 
 The `call()`, `check_call()`, and `check_output()` are wrappers around the `Popen` class. Using `Popen` directly gives more control over how the command is run and how its input and output streams are processed.
@@ -768,7 +768,7 @@ http-alt	8080/tcp     # HTTP Alternate (see port 80)
 None
 ```
 
---
+---
 
 #### Bidirectional Communication with a Process
 
@@ -783,23 +783,23 @@ import sys
 cmd = 'bc'
 send = '1 + 1\n'
 
-print 'running command:', cmd, 'and sending input:', send
+print('running command:', cmd, 'and sending input:', send)
 
 proc = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE)
 stdout, stderr = proc.communicate(send)
 
-print '''
-exit code: {}
+print(f'''
+exit code: {proc.poll()}
 
 stdin:
-{}
+{send}
 
 stdout:
-{}
+{stdout or None}
 
 stderr:
-{}
-'''.format(proc.poll(), send, stdout or None, stderr or None)
+{stderr or None}
+''')
 ```
 
 >```bash
