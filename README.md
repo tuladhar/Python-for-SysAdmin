@@ -54,7 +54,7 @@ print 'Enter few characters and press Ctrl-D'
 data = sys.stdin.read(1024)
 print 'len(data):', len(data)
 
-# reading lines (separated by newlines) from stdin 
+# reading lines (separated by newlines) from stdin
 print 'Enter few lines and press Ctrl-D'
 lines = sys.stdin.readlines()
 print 'total lines read:', len(lines)
@@ -67,7 +67,7 @@ Python built-in `open` function is the standard interface for working with files
 
 ```
 open(file, mode='r')
-``` 
+```
 
 ######Common arguments:
 
@@ -132,7 +132,7 @@ except IOError as e:
 #### Reading `/etc/passwd` and search each line for `/bin/bash` shell; when found print the line number and the line
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python3
 # working-with-files-01.py
 
 def main():
@@ -155,7 +155,7 @@ if __name__ == '__main__': main()
 > ###### Example
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python3
 # linescount-02.py
 
 import fileinput
@@ -170,7 +170,7 @@ print 'totat lines:', lines
 >```bash
 $ cat /etc/passwd | python linescount.py          
 totat lines: 86
-$ python linescount.py /etc/services 
+$ python linescount.py /etc/services
 totat lines: 13921
 $ python linescount.py /etc/services /etc/passwd /etc/hosts
 totat lines: 14023
@@ -183,10 +183,10 @@ By default, `fileinput.input()` will read all lines from files given as an argum
 
 `sys` module provides `argv` variable containing the list of arguments passed to the script when executed as a command-line application.
 
->NOTE: The first argument `sys.argv[0]` is always the name of the script itself. 
+>NOTE: The first argument `sys.argv[0]` is always the name of the script itself.
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python3
 # argv_01.py
 
 import sys
@@ -197,7 +197,7 @@ print 'length:', len(argv)
 >```bash
 $ python args_01.py --help
 ['argv-01.py', '--help']
-2 
+2
 $ python args_01.py 1 2 3
 ['argv-01.py', '1', '2', '3']
 4
@@ -215,10 +215,10 @@ argv_len = len(sys.argv[1:])
 if not argv_len == 2:
 	sys.exit('invalid number of arguments (expected 2, given: {})'.format(argv_len))
 
-print 'two arguments are:', sys.argv[1:] 
+print 'two arguments are:', sys.argv[1:]
 ```
 >```bash
-$ python args_02.py 
+$ python args_02.py
 invalid number of arguments (expected 2, given: 0)
 $ python args_02.py 1
 invalid number of arguments (expected 2, given: 1)
@@ -231,7 +231,7 @@ invalid number of arguments (expected 2, given: 3)
 #### Simple Implementation of `grep' command
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python3
 # grep.py
 
 import sys
@@ -244,9 +244,9 @@ def print_usage():
 def main(argv):
 	if not len(argv) == 1:
 		print_usage()
-	
+
 	pattern = argv[0]
-	
+
 	for line in sys.stdin:
 		if pattern in line:
 			print line.strip()
@@ -288,14 +288,14 @@ import os
 ```
 
 ###### Working with environmental variables:
- 
+
 - `os.environ` a dictionary mapping system environment variables. e.g. `os.environ.get('SHELL')`
 - `os.getenv(key)` retrieve a specific variable.
 - `os.putenv(key, value)`. change variable to specific value. e.g. `os.putenv('HOME', '/opt')`
 
 ###### Working with files and directories:
 
-- `os.tmpnam` returns a unique file name that can be used to create temporariry file. `mktemp()` from `tempfile` module is more secure. 
+- `os.tmpnam` returns a unique file name that can be used to create temporariry file. `mktemp()` from `tempfile` module is more secure.
 - `os.mkdir(path)` `os.rmdir(path)` `os.chdir(path)` `os.listdir(path)`
 - `os.getcwd()` returns current working directory as string. Similar to `pwd` command.
 - `os.stat(path)` similar to `stat` command
@@ -384,7 +384,7 @@ True
 #### Print size (in bytes) of all files in a given directory
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python3
 # filesizes.py
 
 import os
@@ -393,22 +393,22 @@ import sys
 script = sys.argv[0]
 
 def print_usage():
-	print >> sys.stderr, 'Usage: python {} DIR'.format(script)
+	print(f' >> {sys.stderr}, 'Usage: python {script} DIR)
 	sys.exit(1)
 
 def filesizes(path):
 	''' calculate and print size of each file in a given directory. '''
-	
+
 	for dirpath, dirnames, filenames in os.walk(path):
 		for filename in filenames:
 			filepath = os.path.join(dirpath, filename)
 			bytes = os.path.getsize(filepath)
-			print '{} {}'.format(bytes, filepath)
+			print (f'{bytes}, {filepath}')
 
 def main(argv):
 	if not len(argv) == 1:
 		print_usage()
-	
+
 	path = argv[0]
 	filesizes(path)
 
@@ -418,8 +418,8 @@ if __name__ == '__main__':
 ```
 
 >```bash
-$ python filesizes.py . 
-678 ./filesizes.py 
+$ python filesizes.py .
+678 ./filesizes.py
 ```
 
 #### [Learn more about OS module](https://docs.python.org/2.7/library/os.html)
@@ -448,17 +448,17 @@ import sys
 --
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python3
 # sys-01.py
 
 import sys
 from sys import argv
 
-print '''
-Python version installed: {}
+print (f'''
+Python version installed: {sys.version}
 
-Python running on platforn: {}
-'''.format(sys.version, sys.platform)
+Python running on platforn: {sys.platform}
+''')
 
 if len(argv) == 10:
 	sys.exit('error: too many arguments')
@@ -484,7 +484,7 @@ sys.exit(0)
 >```bash
 >$ python sys-01.py
 
->Python version installed: 2.7.8 
+>Python version installed: 2.7.8
 [GCC 4.2.1 (Apple Inc. build 5664)]
 
 >Python running on platforn: darwin
@@ -509,7 +509,7 @@ total modules loaded: 42
 
 ### shutil module — High-level file operations
 
-The `shutil` module provides high-level operations on files or collection of files. 
+The `shutil` module provides high-level operations on files or collection of files.
 
 ###### Copy Operations:
 
@@ -540,7 +540,7 @@ The `glob` module finds all the pathnames matching a specified pattern according
 ['/etc/sysconfig/network-scripts/ifcfg-venet0',
  '/etc/sysconfig/network-scripts/ifcfg-lo']
 
->>> glob.glob('/etc/*.conf') 
+>>> glob.glob('/etc/*.conf')
 ['/etc/vnstat.conf',
  '/etc/sudo.conf',
  '/etc/resolv.conf',
@@ -561,7 +561,7 @@ The `time` module exposes the time-related functions from the underlying C libra
 ###### Commonly used functions:
 
 - `time.time()` returns the number of seconds since the start of the epoch as a floating-point value.
-- `time.ctime()` returns a human-friendly date and time representation. 
+- `time.ctime()` returns a human-friendly date and time representation.
 - `time.gmtime()` returns an object containing current time in UTC format.
 - `time.localtime()` returns an object containing the current time in current time zone.
 - `time.tzset()` sets the time zone based on `TZ` environment variable: `os.environ.get('TZ')`
@@ -615,7 +615,7 @@ The `datetime` module includes functions and classes for doing date and time par
 >>> import datetime
 >>> today_date = datetime.date.today()
 >>> ten_days = datetime.timedelta(days=10)
->>> today_date - ten_days # past 
+>>> today_date - ten_days # past
 >>> today_date + ten_days # future
 ```
 
@@ -638,7 +638,7 @@ datetime.datetime(2016, 4, 6, 7, 13, 26)
 #### [Learn more about datetime module](https://docs.python.org/2.7/library/datetime.html)
 
 ---
-## `Exploring Standard Modules` Subprocess Module 
+## `Exploring Standard Modules` Subprocess Module
 
 ### subprocess module — Subprocess management
 
@@ -667,7 +667,7 @@ Setting the shell argument to a true value causes subprocess to spawn a shell pr
 The return value from `subprocess.call()` is the exit code of the program and is used to detect errors. The `subprocess.check_call()` function works like `call()`, except that the exit code is checked, and if it returns non-zero, then a `subprocess.CalledProcessError` exception is raised.
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python3
 # check_call.py
 
 import sys
@@ -696,7 +696,7 @@ To run an external command and capture it's output, use `check_output(command, s
 >Execute `cat /etc/hosts` and write the output to a file `hosts.txt`
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python3
 # capture_output.py
 
 import subprocess
