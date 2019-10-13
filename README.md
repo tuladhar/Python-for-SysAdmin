@@ -463,18 +463,18 @@ Python running on platforn: {sys.platform}
 if len(argv) == 10:
 	sys.exit('error: too many arguments')
 
-print '''
-argv = {}
-len(argv) = {}
-'''.format(argv, len(argv))
+print(f'''
+argv = {argv}
+len(argv) = {len(argv)}
+''')
 
-print 'Printing to stdout'
-print >> sys.stderr, 'Printing to stderr'
+print ('Printing to stdout')
+print (f'>> {sys.stderr}, 'Printing to stderr')
 
-print '''
-total modules search path: {}
-total modules loaded: {}
-'''.format(len(sys.path), len(sys.modules))
+print(f'''
+total modules search path: {len(sys.path}
+total modules loaded: {len(sys.modules)}
+''')
 
 # success
 sys.exit(0)
@@ -675,7 +675,7 @@ import subprocess
 
 try:
 	cmd = 'false'
-	print 'running command:',cmd
+	print ('running command:',cmd)
 	subprocess.check_call(cmd, shell=True)
 except subprocess.CalledProcessError as error:
 	sys.exit('error: {}'.format(error))
@@ -704,7 +704,7 @@ import sys
 
 try:
 	cmd = 'cat /etc/hosts'
-	print 'running command:', cmd
+	print('running command:', cmd)
 	output = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT)
 except subprocess.CalledProcessError as error:
 	sys.exit('error: {}'.format(error))
@@ -738,18 +738,18 @@ def main(argv):
 	if not len(argv) == 1:
 		sys.exit('usage: python {} command'.format(script))
 	cmd = sys.argv[1]
-	print 'running command:', cmd
+	print ('running command:', cmd)
 	proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	stdout, stderr = proc.communicate()
-	print '''
-exit code: {}
+	print( '''
+exit code: {proc.poll()}
 
 stdout:
-{}
+{ stdout or None}
 
 stderr:
-{}
-'''.format(proc.poll(), stdout or None, stderr or None)
+{stderr or None}
+''')
 
 if __name__ == '__main__':
 	main(sys.argv[1:])
