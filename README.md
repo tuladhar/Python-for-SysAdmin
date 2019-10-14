@@ -1,5 +1,5 @@
 <center>
-<h1> Python for Systems Administrator - Part I </h1>
+<h1> Python for Systems Administrator </h1>
 </center>
 
 ### Author: [Puru Tuladhar](github.com/tuladhar)
@@ -18,7 +18,16 @@
   3. [Shell Modules](#exploring-standard-modules-shell-modules)
   4. [Date and Time Modules](#exploring-standard-modules-date-and-time-modules)
   5. [Subprocess Module](#exploring-standard-modules-subprocess-module)
+  6. [SQLite Module](#exploring-embedded-relational-database-module)
+  7. [Regular Expressions Module](#exprloting-standard-regular-expression-module)
+  8. [Compression Module](#exploring-compression-module)
+  9. [Platform Module](#exploring-platform-module)
+  10. [Signal Module]()
+  11. [Socket Module]()
 
+>3. **Exploring External Modules**
+  1. []()
+  2. []()
 
 ---
 
