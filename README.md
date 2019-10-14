@@ -37,6 +37,7 @@ $ ls no_such_file.txt
 Python built-in `sys` module provides `stdin`, `stdout` and `stderr` as a file-objects, exposing `read()`, `readlines()`, `write()`, `writelines()` methods, as shown below:
 
 ```python
+#!/usr/bin/env python3
 import sys
 
 # writing to stdout pipe
@@ -91,7 +92,7 @@ open(file, mode='r')
 - `.write(data)` Write data to file. Returns number of characters written.
 - `.writelines(list)` Write all data in the list. Useful for writing multiple lines to a file.
 
->###### Example
+###### Example
 
 ```python
 ## Reading a file
@@ -169,7 +170,7 @@ for line in fileinput.input():
 print('totat lines:', lines)
 ```
 
-> ```bash
+ ```bash
 	$ cat /etc/passwd | python linescount.py          
 	totat lines: 86
 	$ python linescount.py /etc/services
@@ -209,6 +210,7 @@ print ('length:', len(argv))
 #### Accept specific number of arguments and fail if not satistified.
 
 ```python
+#!/usr/bin/env python3
 # args-02.py
 import sys
 
@@ -483,8 +485,8 @@ total modules loaded: {len(sys.modules)}
 sys.exit(0)
 ```
 
->######
-	>```bash
+######
+```bash
 	$ python3 sys-01.py
 
 	Python version installed: 3.7.4 (default, Jul  9 2019, 16:48:28) 
@@ -663,7 +665,7 @@ To run an external command without interacting with, use `subprocess.call(comman
 1
 ```
 
-Setting the shell argument to a true value causes subprocess to spawn a shell process (normally bash), which then runs the command. Using a shell means that variables, glob patterns, and other special shell features in the command string are processed before the command is run.
+Setting the **shell** argument to a **True** value causes subprocess to spawn a shell process (normally bash), which then runs the command. Using a shell means that variables, glob patterns, and other special shell features in the command string are processed before the command is run.
 
 --
 
