@@ -225,7 +225,7 @@ if not argv_len == 2:
 
 print('two arguments are:', sys.argv[1:])
 ```
-> ```bash
+ ```bash
 	$ python args_02.py
 	invalid number of arguments (expected 2, given: 0)
 	$ python args_02.py 1
@@ -263,11 +263,11 @@ if __name__ == '__main__':
 	main(sys.argv[1:])
 ```
 
->```bash
+```bash
 	$ cat /etc/services | python grep.py 8080
 	http-alt	8080/udp     # HTTP Alternate (see port 80)
 	http-alt	8080/tcp     # HTTP Alternate (see port 80)
-	```
+```
 
 ---
 
@@ -669,6 +669,15 @@ To run an external command without interacting with, use `subprocess.call(comman
 ```
 
 Setting the **shell** argument to a **True** value causes subprocess to spawn a shell process (normally bash), which then runs the command. Using a shell means that variables, glob patterns, and other special shell features in the command string are processed before the command is run.
+
+```py
+>>> import subprocess
+>>> subprocess.call('echo $PATH' )
+
+# will return error
+subprocess.call('echo $PATH', shell=True)
+# will print the shell PATH variable value
+```
 
 --
 
