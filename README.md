@@ -1,21 +1,24 @@
-# Python for Systems Administrator - Part I
-### Author: [Puru Tuladhar] (github.com/tuladhar)
+<center>
+<h1> Python for Systems Administrator - Part I </h1>
+</center>
+
+### Author: [Puru Tuladhar](github.com/tuladhar)
 ### Editor and Maintainer: [Silent-Mobius](github.com/silent-mobius)
 
 >## Contents
 
 >1. **Getting Started**
-  1. [Standard I/O](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#getting-started-standard-input-output-and-error)
-  2. [Working with files](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#getting-started-working-with-files)
-  3. [Command-line Arguments](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#getting-started-command-line-arguments)
+  1. [Standard I/O](#getting-started-standard-input-output-and-error)
+  2. [Working with files](#getting-started-working-with-files)
+  3. [Command-line Arguments](#getting-started-command-line-arguments)
 
 >2. **Exploring Standard Modules**
-  1. [Operating System (OS) Module](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-operating-system-os-module)
-  2. [System-specific Module](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-system-specific-module)
-  3. [Shell Modules](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-shell-modules)
-  4. [Date and Time Modules](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-date-and-time-modules)
-  5. [Subprocess Module](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-subprocess-module)
-  6. [Psutil Module]
+  1. [Operating System (OS) Module](#exploring-standard-modules-operating-system-os-module)
+  2. [System-specific Module](#exploring-standard-modules-system-specific-module)
+  3. [Shell Modules](#exploring-standard-modules-shell-modules)
+  4. [Date and Time Modules](#exploring-standard-modules-date-and-time-modules)
+  5. [Subprocess Module](#exploring-standard-modules-subprocess-module)
+
 
 ---
 ## `Getting Started` Standard Input, Output and Error
@@ -831,4 +834,4 @@ None
 
 ####[Learn more about subprocess module](https://docs.python.org/3.7/library/subprocess.html?highlight=subprocess#module-subprocess)
 
-##Thank you! ;-)
+##Thank you! ;-{}
