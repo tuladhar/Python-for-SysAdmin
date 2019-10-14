@@ -225,16 +225,17 @@ if not argv_len == 2:
 
 print('two arguments are:', sys.argv[1:])
 ```
- ```bash
-	$ python args_02.py
-	invalid number of arguments (expected 2, given: 0)
-	$ python args_02.py 1
-	invalid number of arguments (expected 2, given: 1)
-	$ python args_02.py 1 2  
-	two arguments are: ['1', '2']
-	$ python args_02.py 1 2 3
-	invalid number of arguments (expected 2, given: 3)
-	```
+
+```bash
+$ python args_02.py
+invalid number of arguments (expected 2, given: 0)
+$ python args_02.py 1
+invalid number of arguments (expected 2, given: 1)
+$ python args_02.py 1 2  
+two arguments are: ['1', '2']
+$ python args_02.py 1 2 3
+invalid number of arguments (expected 2, given: 3)
+```
 
 #### Simple Implementation of `grep' command
 
@@ -488,29 +489,30 @@ total modules loaded: {len(sys.modules)}
 sys.exit(0)
 ```
 
-######
+###### Output should look like this
+
 ```bash
-	$ python3 sys-01.py
+$ python3 sys-01.py
 
-	Python version installed: 3.7.4 (default, Jul  9 2019, 16:48:28) 
-	[GCC 8.3.1 20190223 (Red Hat 8.3.1-2)]
+Python version installed: 3.7.4 (default, Jul  9 2019, 16:48:28) 
+[GCC 8.3.1 20190223 (Red Hat 8.3.1-2)]
 
-	Python running on platforn: linux
-
-
-	argv = ['sys_01.py']
-	len(argv) = 1
-
-	Printing to stdout
-	>> <_io.TextIOWrapper name='<stderr>' mode='w' encoding='UTF-8'>, "Printing to stderr"
-
-	total modules search path: 7
-	total modules loaded: 57
+Python running on platforn: linux
 
 
-	$ echo $?
-	0
-	```
+argv = ['sys_01.py']
+len(argv) = 1
+
+Printing to stdout
+>> <_io.TextIOWrapper name='<stderr>' mode='w' encoding='UTF-8'>, "Printing to stderr"
+
+total modules search path: 7
+total modules loaded: 57
+
+
+$ echo $?
+0
+```
 
 #### [Learn more about sys module](https://docs.python.org/3.7/library/sys.html)
 
@@ -534,7 +536,7 @@ The `shutil` module provides high-level operations on files or collection of fil
 
 #### [Learn more about shutil module](https://docs.python.org/3.7/library/shutil.html)
 
---
+---
 
 ### glob module — Unix style pathname pattern expansion
 
