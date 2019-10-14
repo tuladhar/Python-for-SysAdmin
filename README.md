@@ -19,6 +19,7 @@
   4. [Date and Time Modules](#exploring-standard-modules-date-and-time-modules)
   5. [Subprocess Module](#exploring-standard-modules-subprocess-module)
   6. [SQLite Module](#exploring-embedded-relational-database-module)
+  7. [XmlTree Module](#exploring-xmltree-module) <!--TODO -->
   7. [Regular Expressions Module](#exprloting-standard-regular-expression-module)
   8. [Compression Module](#exploring-compression-module)
   9. [Platform Module](#exploring-platform-module)
@@ -26,8 +27,8 @@
   11. [Socket Module]()
 
 >3. **Exploring External Modules**
-  1. []()
-  2. []()
+  1. [Netmiko Module]()
+  2. [Twisted Module]()
 
 ---
 
