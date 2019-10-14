@@ -66,7 +66,7 @@ print ('Hello, world')
 sys.stdout.write('Hello, world\n')
 
 # writing to stderr pipe
-print (f'>> {sys.stderr}, 'Error occured')
+print (f'>> {sys.stderr}, "Error occured"')
 
 # reading single line from stdin pipe
 sys.stdout.write('Username: ')
@@ -149,7 +149,7 @@ All `open` related errors raises `IOError` exception.
 try:
 	f = open('/etc/passwd')
 except IOError as e:
-	print ()'Opps, something went wrong.'
+	print ('Opps, something went wrong.')
 	print (e)
 ```
 ---
@@ -166,13 +166,15 @@ def main():
 			for no, line in enumerate(f, 1):
 				if '/bin/bash' in line:
 					line = line.strip()
-					print "{} {}".format(no, line)
+					print(f'{no} {line}')
 	except IOError as e:
 		print(e)
 
 if __name__ == '__main__': main()
 ```
---
+
+---
+
 #### Using `fileinput` High-level module
 
 `fileinput` module allows to quickly write a loop over standard input or a list of files.
@@ -267,7 +269,7 @@ import sys
 script = sys.argv[0]
 
 def print_usage():
-	sys.exit('Usage: python {} pattern'.format(script))
+	sys.exit(f'Usage: python {script} pattern')
 
 def main(argv):
 	if not len(argv) == 1:
@@ -277,7 +279,7 @@ def main(argv):
 
 	for line in sys.stdin:
 		if pattern in line:
-			print line.strip()
+			print(line.strip())
 
 if __name__ == '__main__':
 	main(sys.argv[1:])
@@ -390,10 +392,10 @@ True
 >>> os.path.getsize('/etc/hosts')
 475
 
->>> print os.path.basename('/etc/passwd')
+>>> print (os.path.basename('/etc/passwd'))
 'passwd'
 
->>> print os.path.dirname('/etc/passwd')
+>>> print (os.path.dirname('/etc/passwd'))
 '/etc'
 ```
 
@@ -422,7 +424,7 @@ import sys
 script = sys.argv[0]
 
 def print_usage():
-	print(f' >> {sys.stderr}, 'Usage: python {script} DIR)
+	print(f' >> {sys.stderr}, "Usage: python {script} DIR"')
 	sys.exit(1)
 
 def filesizes(path):
@@ -431,8 +433,8 @@ def filesizes(path):
 	for dirpath, dirnames, filenames in os.walk(path):
 		for filename in filenames:
 			filepath = os.path.join(dirpath, filename)
-			bytes = os.path.getsize(filepath)
-			print (f'{bytes}, {filepath}')
+			_bytes = os.path.getsize(filepath)
+			print (f'{_bytes}, {filepath}')
 
 def main(argv):
 	if not len(argv) == 1:
@@ -722,7 +724,7 @@ try:
 	print ('running command:',cmd)
 	subprocess.check_call(cmd, shell=True)
 except subprocess.CalledProcessError as error:
-	sys.exit('error: {}'.format(error))
+	sys.exit(f'error: {error}')
 ```
 
 	>```bash
@@ -751,7 +753,7 @@ try:
 	print('running command:', cmd)
 	output = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT)
 except subprocess.CalledProcessError as error:
-	sys.exit('error: {}'.format(error))
+	sys.exit('error: {error}')
 else:
 	print('success!')
 	with open('hosts.txt', 'w') as f:
