@@ -18,17 +18,23 @@
   3. [Shell Modules](#exploring-standard-modules-shell-modules)
   4. [Date and Time Modules](#exploring-standard-modules-date-and-time-modules)
   5. [Subprocess Module](#exploring-standard-modules-subprocess-module)
-  6. [SQLite Module](#exploring-embedded-relational-database-module)
+  6. [Argparse Module](#exploring-standard-modules-argparse-module)
+  6. [SQLite Module](#exploring-standard-modules-embedded-relational-database-module) <!--TODO -->
   7. [XmlTree Module](#exploring-xmltree-module) <!--TODO -->
-  7. [Regular Expressions Module](#exprloting-standard-regular-expression-module)
-  8. [Compression Module](#exploring-compression-module)
-  9. [Platform Module](#exploring-platform-module)
-  10. [Signal Module]()
-  11. [Socket Module]()
+  8. [Regular Expressions Module](#exprloting-standard-regular-expression-module)
+  9. [Compression Module](#exploring-compression-module)
+  10. [Platform Module](#exploring-platform-module)
+  11. [Signal Module]()
+  12. [Socket Module]()
 
 >3. **Exploring External Modules**
+  >>##### Network Modules
   1. [Netmiko Module]()
   2. [Twisted Module]()
+  3. [Ipaddesses Module]()
+  4. [Netsnmp Module]()
+
+  >> ##### DB Modules
 
 ---
 
