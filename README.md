@@ -472,10 +472,10 @@ len(argv) = {len(argv)}
 ''')
 
 print ('Printing to stdout')
-print (f'>> {sys.stderr}, 'Printing to stderr')
+print (f'>> {sys.stderr}, "Printing to stderr"')
 
 print(f'''
-total modules search path: {len(sys.path}
+total modules search path: {len(sys.path)}
 total modules loaded: {len(sys.modules)}
 ''')
 
@@ -484,26 +484,28 @@ sys.exit(0)
 ```
 
 >######
->```bash
-$ python sys-01.py
+	>```bash
+	$ python3 sys-01.py
 
-Python version installed: 2.7.8
-[GCC 4.2.1 (Apple Inc. build 5664)]
+	Python version installed: 3.7.4 (default, Jul  9 2019, 16:48:28) 
+	[GCC 8.3.1 20190223 (Red Hat 8.3.1-2)]
 
-Python running on platforn: darwin
+	Python running on platforn: linux
 
-argv = ['sys-01.py']
-len(argv) = 1
 
-Printing to stdout.
-Printing to stderr
+	argv = ['sys_01.py']
+	len(argv) = 1
 
-total modules search path: 23
-total modules loaded: 42
+	Printing to stdout
+	>> <_io.TextIOWrapper name='<stderr>' mode='w' encoding='UTF-8'>, "Printing to stderr"
 
- $ echo $?
-0
-```
+	total modules search path: 7
+	total modules loaded: 57
+
+
+	$ echo $?
+	0
+	```
 
 #### [Learn more about sys module](https://docs.python.org/2.7/library/sys.html)
 
@@ -684,11 +686,11 @@ except subprocess.CalledProcessError as error:
 	sys.exit('error: {}'.format(error))
 ```
 
->```bash
-$ python check_call.py
-running command: false
-error: Command 'false' returned non-zero exit status 1
-```
+	>```bash
+	$ python check_call.py
+	running command: false
+	error: Command 'false' returned non-zero exit status 1
+	```
 
 ---
 
@@ -715,6 +717,7 @@ else:
 	print('success!')
 	with open('hosts.txt', 'w') as f:
 		f.write(output)
+		#this should give an error in python3.6+
 ```
 
 By default, `check_output` captures outputs written to `stdout`. Setting the `stderr=subprocess.STDOUT` causes `stderr` outputs to redirected to `stdout`, so errors can be captured as well.
@@ -731,6 +734,7 @@ To run a process and capture it's output, set the `stdout` and `stderr` argument
 `communicate()` returns 2-tuple `(stderr_output, stderr_putput)`
 
 ```python
+#!/usr/bin/env python3
 # one-way.py
 import subprocess
 import sys
@@ -739,16 +743,16 @@ script = sys.argv[0]
 
 def main(argv):
 	if not len(argv) == 1:
-		sys.exit('usage: python {} command'.format(script))
+		sys.exit(f'usage: python {script} command')
 	cmd = sys.argv[1]
 	print ('running command:', cmd)
 	proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	stdout, stderr = proc.communicate()
-	print( '''
+	print(f'''
 exit code: {proc.poll()}
 
 stdout:
-{ stdout or None}
+{stdout or None}
 
 stderr:
 {stderr or None}
@@ -758,26 +762,28 @@ if __name__ == '__main__':
 	main(sys.argv[1:])
 ```
 
->```bash
->$ python one-way.py 'grep 8080/tcp /etc/services'
->running command: grep 8080/tcp /etc/services
+```bash
+$ python3 one_way.py ls
+running command: ls
 
->exit code: 0
+exit code: 0
 
->stdout:
-http-alt	8080/tcp     # HTTP Alternate (see port 80)
+stdout:
+b'capture_output.py\ncheck_call.py\nhosts.txt\none_way.py\nsys_01.py\n'
 
->stderr:
+stderr:
 None
+
 ```
 
 ---
 
-#### Bidirectional Communication with a Process
+### Bidirectional Communication with a Process
 
 To set up the Popen instance for reading and writing at the same time, pass additional argument `stdin=subprocess.PIPE`.
 
 ```python
+#!/usr/bin/env python3
 # bidirectional.py
 import subprocess
 from subprocess import PIPE
@@ -805,19 +811,19 @@ stderr:
 ''')
 ```
 
->```bash
+```bash
 $ python bidirectional.py
 running command: bc and sending input: 1 + 1
 
->exit code: 0
+exit code: 0
 
->stdin:
+stdin:
 1 + 1
 
->stdout:
+stdout:
 2
 
->stderr:
+stderr:
 None
 ```
 
