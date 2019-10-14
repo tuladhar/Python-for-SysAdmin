@@ -342,7 +342,7 @@ import os
 - `os.path.getsize(path)` return size (in bytes) for a given path.
 - `os.path.isfile(path)`, `os.path.isdir(path)` returns `True` or `False` if path is file or a directory.
 - `os.path.getctime(path)`,  `os.path.getmtime(path)` Similar to `os.stat(path).ctime`, `os.stat(path).mtime()`
-- Learn more at [os.path documentation](https://docs.python.org/2.7/library/os.path.html)
+- Learn more at [os.path documentation](https://docs.python.org/3.7/library/os.path.html)
 
 > ###### Example
 
@@ -425,7 +425,7 @@ if __name__ == '__main__':
 	678 ./filesizes.py
 	```
 
-#### [Learn more about OS module](https://docs.python.org/2.7/library/os.html)
+#### [Learn more about OS module](https://docs.python.org/3.7/library/os.html)
 
 ---
 ## `Exploring Standard Modules` System-specific Module
@@ -507,7 +507,7 @@ sys.exit(0)
 	0
 	```
 
-#### [Learn more about sys module](https://docs.python.org/2.7/library/sys.html)
+#### [Learn more about sys module](https://docs.python.org/3.7/library/sys.html)
 
 ---
 ## `Exploring Standard Modules` Shell Modules
@@ -527,7 +527,7 @@ The `shutil` module provides high-level operations on files or collection of fil
 
 - `shutil.move(src, dst)` Move src file to dst file or directory.
 
-#### [Learn more about shutil module](https://docs.python.org/2.7/library/shutil.html)
+#### [Learn more about shutil module](https://docs.python.org/3.7/library/shutil.html)
 
 --
 
@@ -553,7 +553,7 @@ The `glob` module finds all the pathnames matching a specified pattern according
  '/etc/logrotate.conf']
 ```
 
-#### [Learn more about glob module](https://docs.python.org/2.7/library/glob.html)
+#### [Learn more about glob module](https://docs.python.org/3.7/library/glob.html)
 
 ---
 
@@ -597,7 +597,7 @@ The `time` module exposes the time-related functions from the underlying C libra
 >>> time.tzset()
 >>> gmt = '{} {}'.format(time.ctime(), time.tzname[0])
 ```
-#### [Learn more about time module](https://docs.python.org/2.7/library/time.html)
+#### [Learn more about time module](https://docs.python.org/3.7/library/time.html)
 
 --
 
@@ -614,7 +614,7 @@ The `datetime` module includes functions and classes for doing date and time par
 - `datetime.datetime.fromtimestamp(float)` convert unix timestamp to datetime object
 - `datetime.timedelta` future and past dates can be calculated using basic arithmetic (+, -) on two datetime objects, or by combining a datetime with a timedelta object.
 
->###### Example
+###### Example
 
 ```python
 >>> import datetime
@@ -633,14 +633,14 @@ The `datetime` module includes functions and classes for doing date and time par
 >>>  format = "%a %b %d %H:%M:%S %Y"
 >>> today = datetime.datetime.today()
 >>> today.strftime(format)
-'Wed Apr 06 07:13:26 2016'
+'Mon Oct 14 17:56:24 2019'
 
 # convert formatted string to datetime object
->>> datetime.datetime.strptime('Wed Apr 06 07:13:26 2016', format)
-datetime.datetime(2016, 4, 6, 7, 13, 26)
+>>> datetime.datetime.strptime('Mon Oct 14 17:56:24 2019', format)
+datetime.datetime(2019, 10, 14, 17, 56, 24)
 ```
 
-#### [Learn more about datetime module](https://docs.python.org/2.7/library/datetime.html)
+#### [Learn more about datetime module](https://docs.python.org/3.7/library/datetime.html)
 
 ---
 ## `Exploring Standard Modules` Subprocess Module
@@ -827,6 +827,6 @@ stderr:
 None
 ```
 
-####[Learn more about subprocess module](https://docs.python.org/2.7/library/subprocess.html?highlight=subprocess#module-subprocess)
+####[Learn more about subprocess module](https://docs.python.org/3.7/library/subprocess.html?highlight=subprocess#module-subprocess)
 
 ##Thank you! ;-)
