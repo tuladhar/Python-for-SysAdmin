@@ -1,8 +1,8 @@
-#Python for Systems Administrator - Part I
+# Python for Systems Administrator - Part I
 ### Author: [Puru Tuladhar] (github.com/tuladhar)
-### Maintainer: [Silent-Mobius](github.com/silent-mobius)
+### Editor and Maintainer: [Silent-Mobius](github.com/silent-mobius)
 
->##Contents
+>## Contents
 
 >1. **Getting Started**
   1. [Standard I/O](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#getting-started-standard-input-output-and-error)
@@ -15,6 +15,7 @@
   3. [Shell Modules](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-shell-modules)
   4. [Date and Time Modules](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-date-and-time-modules)
   5. [Subprocess Module](https://github.com/tuladhar/Python-for-SysAdmin-Part-I/blob/master/README.md#exploring-standard-modules-subprocess-module)
+  6. [Psutil Module]
 
 ---
 ## `Getting Started` Standard Input, Output and Error
@@ -70,7 +71,7 @@ Python built-in `open` function is the standard interface for working with files
 open(file, mode='r')
 ```
 
-######Common arguments:
+###### Common arguments:
 
 - __file:__ absolute or relative path of the file. e.g: `/etc/passwd`, `./ip-list.txt`
 - __mode:__ an optional string specifying mode in which the file is opened. Default's to `r` for reading in text mode. Common values are:
@@ -81,7 +82,7 @@ open(file, mode='r')
  - `b` binary mode for non-text files. Contents are returned as `byte` objects.
  - `t` text mode (default). Contents are returned as `strings`.
 
-######File object methods:
+###### File object methods:
 
 - `.close()`
 - `.read(size=-1)` read at most `n` characters. If `n` is negative or ommited, reads the whole file until `EOF`.
@@ -168,18 +169,19 @@ for line in fileinput.input():
 print('totat lines:', lines)
 ```
 
->```bash
-$ cat /etc/passwd | python linescount.py          
-totat lines: 86
-$ python linescount.py /etc/services
-totat lines: 13921
-$ python linescount.py /etc/services /etc/passwd /etc/hosts
-totat lines: 14023
-```
+> ```bash
+	$ cat /etc/passwd | python linescount.py          
+	totat lines: 86
+	$ python linescount.py /etc/services
+	totat lines: 13921
+	$ python linescount.py /etc/services /etc/passwd /etc/hosts
+	totat lines: 14023
+	```
 
 By default, `fileinput.input()` will read all lines from files given as an argument to the script; if no arguments given then defaults to standard input.
 
----
+--
+ 
 ## `Getting Started` Command-line Arguments
 
 `sys` module provides `argv` variable containing the list of arguments passed to the script when executed as a command-line application.
@@ -196,13 +198,13 @@ print ('sys.argv:', sys.argv)
 print ('length:', len(argv))
 ```
 >```bash
-$ python args_01.py --help
-['argv-01.py', '--help']
-2
-$ python args_01.py 1 2 3
-['argv-01.py', '1', '2', '3']
-4
-```
+	$ python args_01.py --help
+	['argv-01.py', '--help']
+	2
+	$ python args_01.py 1 2 3
+	['argv-01.py', '1', '2', '3']
+	4
+	```
 
 #### Accept specific number of arguments and fail if not satistified.
 
