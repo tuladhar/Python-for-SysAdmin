@@ -370,7 +370,8 @@ import os
 - `os.path.getsize(path)` return size (in bytes) for a given path.
 - `os.path.isfile(path)`, `os.path.isdir(path)` returns `True` or `False` if path is file or a directory.
 - `os.path.getctime(path)`,  `os.path.getmtime(path)` Similar to `os.stat(path).ctime`, `os.stat(path).mtime()`
-- Learn more at [os.path documentation](https://docs.python.org/3.7/library/os.path.html)
+
+#### Learn more at [os.path documentation](https://docs.python.org/3.7/library/os.path.html)
 
 ##### Example
 
@@ -869,9 +870,42 @@ stderr:
 None
 ```
 
-####[Learn more about subprocess module](https://docs.python.org/3.7/library/subprocess.html?highlight=subprocess#module-subprocess)
+#### [Learn more about subprocess module](https://docs.python.org/3.7/library/subprocess.html?highlight=subprocess#module-subprocess)
 
 
 ## `Exploring Argparse` Command-Line Option and Argument Parsing
 
 Python built-in `argparse` is parser for command-line options, arguments and subcommands. The argparse module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and argparse will figure out how to parse those out of sys.argv. The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid arguments.
+Let’s show the sort of functionality that we are going to explore in this introductory tutorial by making use of the ls command:
+
+```bash
+$ ls
+examples  LICENSE  README.md
+$ ls -l
+total 44
+drwxrwxr-x.  4 que que  4096 Oct 14 18:05 .
+drwxrwxr-x. 24 que que  4096 Oct 13 15:32 ..
+drwxrwxr-x.  2 que que  4096 Oct 14 18:48 examples
+drwxrwxr-x.  8 que que  4096 Oct 15 01:01 .git
+-rw-rw-r--.  1 que que  1210 Oct 13 15:32 LICENSE
+-rw-rw-r--.  1 que que 24357 Oct 15 01:02 README.md
+$ ls --help
+Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+...
+```
+A few concepts we can learn from the four commands:
+* When you run the "ls" command without any options, it will default displaying the contents of the current directory
+* The "-l" is knowns as an "optional argument"
+* If you want to display the help text of the ls command, you would type "ls --help"
+
+To start using the argparse module, we first have to import it. 
+
+```py
+>>> import argparse
+>>> parser = argparse.Argumentparser()
+>>> parser.parse_args()
+Namespace()
+
+```
