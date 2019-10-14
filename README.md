@@ -21,6 +21,7 @@
 
 
 ---
+
 ## `Getting Started` Standard Input, Output and Error
 
 Standard input, output and error (commonly referred as `stdin`, `stdout` and `stderr`) are what's called pipes.
@@ -95,7 +96,7 @@ open(file, mode='r')
 - `.write(data)` Write data to file. Returns number of characters written.
 - `.writelines(list)` Write all data in the list. Useful for writing multiple lines to a file.
 
-###### Example
+##### Example
 
 ```python
 ## Reading a file
@@ -158,7 +159,7 @@ if __name__ == '__main__': main()
 
 `fileinput` module allows to quickly write a loop over standard input or a list of files.
 
-> ###### Example
+##### Example
 
 ```python
 #!/usr/bin/env python3
@@ -173,18 +174,18 @@ for line in fileinput.input():
 print('totat lines:', lines)
 ```
 
- ```bash
-	$ cat /etc/passwd | python linescount.py          
-	totat lines: 86
-	$ python linescount.py /etc/services
-	totat lines: 13921
-	$ python linescount.py /etc/services /etc/passwd /etc/hosts
-	totat lines: 14023
-	```
+```bash
+$ cat /etc/passwd | python linescount.py          
+totat lines: 86
+$ python linescount.py /etc/services
+totat lines: 13921
+$ python linescount.py /etc/services /etc/passwd /etc/hosts
+totat lines: 14023
+```
 
 By default, `fileinput.input()` will read all lines from files given as an argument to the script; if no arguments given then defaults to standard input.
 
---
+---
  
 ## `Getting Started` Command-line Arguments
 
@@ -201,14 +202,14 @@ import sys
 print ('sys.argv:', sys.argv)
 print ('length:', len(argv))
 ```
->```bash
-	$ python args_01.py --help
-	['argv-01.py', '--help']
-	2
-	$ python args_01.py 1 2 3
-	['argv-01.py', '1', '2', '3']
-	4
-	```
+```bash
+$ python3 args_01.py --help
+['argv-01.py', '--help']
+2
+$ python3 args_01.py 1 2 3
+['argv-01.py', '1', '2', '3']
+4
+```
 
 #### Accept specific number of arguments and fail if not satistified.
 
@@ -265,9 +266,9 @@ if __name__ == '__main__':
 ```
 
 ```bash
-	$ cat /etc/services | python grep.py 8080
-	http-alt	8080/udp     # HTTP Alternate (see port 80)
-	http-alt	8080/tcp     # HTTP Alternate (see port 80)
+$ cat /etc/services | python grep.py 8080
+http-alt	8080/udp     # HTTP Alternate (see port 80)
+http-alt	8080/tcp     # HTTP Alternate (see port 80)
 ```
 
 ---
@@ -288,6 +289,7 @@ $ python grep.py 8080 /etc/services
 ```
 
 ---
+
 ## `Exploring Standard Modules` Operating System (OS) Module
 
 Python built-in `os` module exposes operating system dependent functionality in a portable way, thus works across many different platforms.
@@ -310,7 +312,7 @@ import os
 - `os.stat(path)` similar to `stat` command
 - `os.walk(path)` recursively walk the dictionary tree, similar to `ls -R`. Returns generator yielding 3-tuple `(dirpath, dirnames, files)`
 
->###### Example
+##### Example
 
 ```bash
 >>> import os
@@ -350,7 +352,7 @@ import os
 - `os.path.getctime(path)`,  `os.path.getmtime(path)` Similar to `os.stat(path).ctime`, `os.stat(path).mtime()`
 - Learn more at [os.path documentation](https://docs.python.org/3.7/library/os.path.html)
 
-> ###### Example
+##### Example
 
 ```bash
 >>> os.path.isdir('/etc')
@@ -454,7 +456,7 @@ import sys
 - `sys.path` A list of strings that specified the search path while importing modules via `import` statement.
 - `sys.modules` A dictionary mapping the `{ 'module_name': 'module_path', ... }` which have already been loaded.
 
---
+---
 
 ```python
 #!/usr/bin/env python3
@@ -517,6 +519,7 @@ $ echo $?
 #### [Learn more about sys module](https://docs.python.org/3.7/library/sys.html)
 
 ---
+
 ## `Exploring Standard Modules` Shell Modules
 
 ### shutil module — High-level file operations
@@ -544,7 +547,7 @@ The `glob` module finds all the pathnames matching a specified pattern according
 
 - `glob.glob(pattern)` Return a list of path names that match the path pattern. Path can be absolute `/usr/local/bin/*.py` or relative `local/bin/*.py`.
 
->###### Example
+##### Example
 
 ```bash
 >>> import glob
@@ -578,7 +581,7 @@ The `time` module exposes the time-related functions from the underlying C libra
 - `time.localtime()` returns an object containing the current time in current time zone.
 - `time.tzset()` sets the time zone based on `TZ` environment variable: `os.environ.get('TZ')`
 
->###### Example
+##### Example
 
 ```bash
 >>> import time
@@ -604,9 +607,10 @@ The `time` module exposes the time-related functions from the underlying C libra
 >>> time.tzset()
 >>> gmt = '{} {}'.format(time.ctime(), time.tzname[0])
 ```
+
 #### [Learn more about time module](https://docs.python.org/3.7/library/time.html)
 
---
+---
 
 ## datetime module — Date and Time Value Manipulation
 
@@ -621,7 +625,7 @@ The `datetime` module includes functions and classes for doing date and time par
 - `datetime.datetime.fromtimestamp(float)` convert unix timestamp to datetime object
 - `datetime.timedelta` future and past dates can be calculated using basic arithmetic (+, -) on two datetime objects, or by combining a datetime with a timedelta object.
 
-###### Example
+##### Example
 
 ```python
 >>> import datetime
@@ -650,6 +654,7 @@ datetime.datetime(2019, 10, 14, 17, 56, 24)
 #### [Learn more about datetime module](https://docs.python.org/3.7/library/datetime.html)
 
 ---
+
 ## `Exploring Standard Modules` Subprocess Module
 
 ### subprocess module — Subprocess management
@@ -739,6 +744,7 @@ else:
 By default, `check_output` captures outputs written to `stdout`. Setting the `stderr=subprocess.STDOUT` causes `stderr` outputs to redirected to `stdout`, so errors can be captured as well.
 
 ---
+
 ###  Working directory with Popen
 
 The `call()`, `check_call()`, and `check_output()` are wrappers around the `Popen` class. Using `Popen` directly gives more control over how the command is run and how its input and output streams are processed.
