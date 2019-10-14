@@ -18,9 +18,9 @@
   3. [Shell Modules](#exploring-standard-modules-shell-modules)
   4. [Date and Time Modules](#exploring-standard-modules-date-and-time-modules)
   5. [Subprocess Module](#exploring-standard-modules-subprocess-module)
-  6. [Argparse Module](#exploring-standard-modules-argparse-module)
-  6. [SQLite Module](#exploring-standard-modules-embedded-relational-database-module) <!--TODO -->
-  7. [XmlTree Module](#exploring-xmltree-module) <!--TODO -->
+  6. [Argparse Module](#exploring-standard-modules-argparse-module)<!--TODO -->
+  6. [SQLite Module](#exploring-standard-modules-embedded-relational-database-module) 
+  7. [XmlTree Module](#exploring-xmltree-module)
   8. [Regular Expressions Module](#exprloting-standard-regular-expression-module)
   9. [Compression Module](#exploring-compression-module)
   10. [Platform Module](#exploring-platform-module)
@@ -85,6 +85,7 @@ print ('total lines read:', len(lines))
 ```
 
 ---
+
 ## `Getting Started` Working with files
 
 Python built-in `open` function is the standard interface for working with files. `open` returns a file object with familiar methods for performing read/write operations.
