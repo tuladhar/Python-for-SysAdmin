@@ -1,5 +1,5 @@
 <center>
-<h1> Python for Systems Administrator </h1>
+<h1> Python3 for Systems Administrator </h1>
 </center>
 
 ### Author: [Puru Tuladhar](github.com/tuladhar)
@@ -28,7 +28,7 @@
   12. [Socket Module](#exploring-standard-modules-socket-module)
 
 >3. **Exploring External Modules**
-  >>##### Network Modules
+  >> ##### Network Modules
   1. [Netmiko Module](#exploring-standard-modules-netmiko-module)
   2. [Twisted Module](#exploring-standard-modules-twisted-module)
   3. [Ipaddress Module](#exploring-standard-modules-ipaddress-module)
@@ -242,7 +242,7 @@ import sys
 argv_len = len(sys.argv[1:])
 
 if not argv_len == 2:
-	sys.exit('invalid number of arguments (expected 2, given: {})'.format(argv_len))
+	sys.exit(f'invalid number of arguments (expected 2, given: {argv_len})')
 
 print('two arguments are:', sys.argv[1:])
 ```
@@ -286,7 +286,7 @@ if __name__ == '__main__':
 ```
 
 ```bash
-$ cat /etc/services | python grep.py 8080
+$ cat /etc/services | python3 grep.py 8080
 http-alt	8080/udp     # HTTP Alternate (see port 80)
 http-alt	8080/tcp     # HTTP Alternate (see port 80)
 ```
@@ -297,15 +297,15 @@ http-alt	8080/tcp     # HTTP Alternate (see port 80)
 - Extend `grep.py` to read from a file instead of standard input, and can be run as:
 
 ```bash
-$ python grep.py 8080 /etc/services
+$ python3 grep.py 8080 /etc/services
 ```
 
 - Extend `grep.py` to read from a file if given as a second argument or default back to read from standard input similar to what `grep` does.
 
 ```bash
-$ cat /etc/services | python grep.py 8080
+$ cat /etc/services | python3 grep.py 8080
 # and also should works as
-$ python grep.py 8080 /etc/services
+$ python3 grep.py 8080 /etc/services
 ```
 
 ---
@@ -424,7 +424,7 @@ import sys
 script = sys.argv[0]
 
 def print_usage():
-	print(f' >> {sys.stderr}, "Usage: python {script} DIR"')
+	print(f' >> {sys.stderr}, "Usage: python3 {script} DIR"')
 	sys.exit(1)
 
 def filesizes(path):
@@ -449,7 +449,7 @@ if __name__ == '__main__':
 ```
 
 >```bash
-	$ python filesizes.py .
+	$ python3 filesizes.py .
 	678 ./filesizes.py
 	```
 
@@ -727,11 +727,11 @@ except subprocess.CalledProcessError as error:
 	sys.exit(f'error: {error}')
 ```
 
-	>```bash
-	$ python check_call.py
-	running command: false
-	error: Command 'false' returned non-zero exit status 1
-	```
+```bash
+$ python3 check_call.py
+running command: false
+error: Command 'false' returned non-zero exit status 1
+```
 
 ---
 
@@ -785,7 +785,7 @@ script = sys.argv[0]
 
 def main(argv):
 	if not len(argv) == 1:
-		sys.exit(f'usage: python {script} command')
+		sys.exit(f'usage: python3 {script} command')
 	cmd = sys.argv[1]
 	print ('running command:', cmd)
 	proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -854,7 +854,7 @@ stderr:
 ```
 
 ```bash
-$ python bidirectional.py
+$ python3 bidirectional.py
 running command: bc and sending input: 1 + 1
 
 exit code: 0
@@ -873,3 +873,5 @@ None
 
 
 ## `Exploring Argparse` Command-Line Option and Argument Parsing
+
+Python built-in `argparse` is parser for command-line options, arguments and subcommands. The argparse module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and argparse will figure out how to parse those out of sys.argv. The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid arguments.
