@@ -220,16 +220,16 @@ if not argv_len == 2:
 
 print('two arguments are:', sys.argv[1:])
 ```
->```bash
-$ python args_02.py
-invalid number of arguments (expected 2, given: 0)
-$ python args_02.py 1
-invalid number of arguments (expected 2, given: 1)
-$ python args_02.py 1 2  
-two arguments are: ['1', '2']
-$ python args_02.py 1 2 3
-invalid number of arguments (expected 2, given: 3)
-```
+> ```bash
+	$ python args_02.py
+	invalid number of arguments (expected 2, given: 0)
+	$ python args_02.py 1
+	invalid number of arguments (expected 2, given: 1)
+	$ python args_02.py 1 2  
+	two arguments are: ['1', '2']
+	$ python args_02.py 1 2 3
+	invalid number of arguments (expected 2, given: 3)
+	```
 
 #### Simple Implementation of `grep' command
 
@@ -259,10 +259,10 @@ if __name__ == '__main__':
 ```
 
 >```bash
-$ cat /etc/services | python grep.py 8080
-http-alt	8080/udp     # HTTP Alternate (see port 80)
-http-alt	8080/tcp     # HTTP Alternate (see port 80)
-```
+	$ cat /etc/services | python grep.py 8080
+	http-alt	8080/udp     # HTTP Alternate (see port 80)
+	http-alt	8080/tcp     # HTTP Alternate (see port 80)
+	```
 
 ---
 
@@ -421,9 +421,9 @@ if __name__ == '__main__':
 ```
 
 >```bash
-$ python filesizes.py .
-678 ./filesizes.py
-```
+	$ python filesizes.py .
+	678 ./filesizes.py
+	```
 
 #### [Learn more about OS module](https://docs.python.org/2.7/library/os.html)
 
@@ -485,23 +485,23 @@ sys.exit(0)
 
 >######
 >```bash
->$ python sys-01.py
+$ python sys-01.py
 
->Python version installed: 2.7.8
+Python version installed: 2.7.8
 [GCC 4.2.1 (Apple Inc. build 5664)]
 
->Python running on platforn: darwin
+Python running on platforn: darwin
 
->argv = ['sys-01.py']
+argv = ['sys-01.py']
 len(argv) = 1
 
->Printing to stdout.
+Printing to stdout.
 Printing to stderr
 
->total modules search path: 23
+total modules search path: 23
 total modules loaded: 42
 
-> $ echo $?
+ $ echo $?
 0
 ```
 
