@@ -896,7 +896,7 @@ Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
 ...
 ```
 A few concepts we can learn from the four commands:
-* When you run the "ls" command without any options, it will default displaying the contents of the current directory
+* When you run the "ls -l" command with options, it will default displaying the contents of the current directory
 * The "-l" is knowns as an "optional argument"
 * If you want to display the help text of the ls command, you would type "ls --help"
 
@@ -906,3 +906,7 @@ To start using the argparse module, we first have to import it.
 >>> import argparse
 ```
 
+#### Intro to positional arguments
+
+
+#### [Learn more about argparse module](https://docs.python.org/3.7/library/argparse.html)
