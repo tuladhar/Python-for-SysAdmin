@@ -907,6 +907,90 @@ To start using the argparse module, we first have to import it.
 ```
 
 #### Intro to positional arguments
+The following code is a Python program that takes a list of integers and produces either the sum or the max:
+##### Example
+```py
+import argparse
 
+parser = argparse.ArgumentParser(description='Process some integers.')
+parser.add_argument('integers', metavar='N', type=int, nargs='+',
+                   help='an integer for the accumulator')
+parser.add_argument('--sum', dest='accumulate', action='store_const',
+                   const=sum, default=max,
+                   help='sum the integers (default: find the max)')
+
+args = parser.parse_args()
+print args.accumulate(args.integers)
+```
+Assuming the Python code above is saved into a file called `app.py`, it can be run at the command line and provides useful help messages
+
+```bash
+$ app.py -h
+usage: prog.py [-h] [--sum] N [N ...]
+
+Process some integers.
+
+positional arguments:
+ N           an integer for the accumulator
+
+optional arguments:
+ -h, --help  show this help message and exit
+ --sum       sum the integers (default: find the max)
+
+$ app.py 1 2 3 4
+4
+
+$ app.py 1 2 3 4 --sum
+10
+
+```
+
+### Creating a parser
+
+The first step in using the `argparse` is creating an `ArgumentParser` object:
+
+```py
+>>> parser = argparse.ArgumentParser(description='Process some integers.')
+```
+The `ArgumentParser` object will hold all the information necessary to parse the command line into python data types.
+
+### Adding arguments
+
+Filling an`ArgumentParser` with information about program arguments is done by making calls to the :meth:`~ArgumentParser.add_argument` method. Generally, these calls tell the `ArgumentParser` how to take the strings on the command line and turn them into objects. This information is stored and used when :meth:`~ArgumentParser.parse_args` is called. For example:
+
+```py
+>>> parser.add_argument('integers', metavar='N', type=int, nargs='+',
+...                     help='an integer for the accumulator')
+>>> parser.add_argument('--sum', dest='accumulate', action='store_const',
+...                     const=sum, default=max,
+...                     help='sum the integers (default: find the max)')
+```
+
+Later, calling :meth:`parse_args` will return an object with two attributes, integers and accumulate. The integers attribute will be a list of one or more ints, and the accumulate attribute will be either the `sum` function, if --sum was specified at the command line, or the `max` function if it was not.
+
+### Parsing arguments
+
+`ArgumentParser` parses args through the :meth:`~ArgumentParser.parse_args` method. This will inspect the command-line, convert each arg to the appropriate type and then invoke the appropriate action. In most cases, this means a simple namespace object will be built up from attributes parsed out of the command-line:
+```py
+>>> parser.parse_args(['--sum', '7', '-1', '42'])
+Namespace(accumulate=<built-in function sum>, integers=[7, -1, 42])
+```
+In a script,`ArgumentParser.parse_args` will typically be called with no arguments, and the `ArgumentParser` will automatically determine the command-line args from `sys.argv`.
+
+### ArgumentParser objects
+
+Create a new `ArgumentParser` object. Each parameter has its own more detailed description below, but in short they are:
+
+- `description` - Text to display before the argument help.
+- `epilog` - Text to display after the argument help.
+- `add_help` - Add a -h/--help option to the parser. (default: True)
+- `argument_default` - Set the global default value for arguments. (default: None)
+- `parents` - A list of `ArgumentParser` objects whose arguments should also be included.
+- `prefix_chars` - The set of characters that prefix optional arguments. (default: '-')
+- `fromfile_prefix_chars` - The set of characters that prefix files from which additional arguments should be read. (default: None)
+- `formatter_class` - A class for customizing the help output.
+- `conflict_handler` - Usually unnecessary, defines strategy for resolving conflicting optionals.
+- `prog` - The name of the program (default:`sys.argv[0]`)
+- `usage` - The string describing the program usage (default: generated)
 
 #### [Learn more about argparse module](https://docs.python.org/3.7/library/argparse.html)
