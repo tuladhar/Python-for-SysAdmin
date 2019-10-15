@@ -23,21 +23,21 @@ class HostRecord(object):
     def __repr__(self):
         return "[Host Record('%s','%s','%s')]" % (self.ip,self.mac,self.snmp_response)
     
-    def f(i,q,oq):
-        while True:
-            time.sleep(.1)
-            if q.empty():
-                sys.exit()
-                print(f"Process Number: {i} Exit" )
-            ip = q.get()
-            print "Process Number: %s" % i
-            ret = subprocess.call("ping -c 1 %s" % ip,shell=True,stdout=open('/dev/null', 'w'),stderr=subprocess.STDOUT)
-            if ret == 0:
-                print "%s: is alive" % ip
-                oq.put(ip)
-            else:
-                print "Process Number: %s didn’t find a response for %s " % (i, ip)
-                pass
+def f(i,q,oq):
+    while True:
+        time.sleep(.1)
+        if q.empty():
+            sys.exit()
+            print(f"Process Number: {i} Exit" )
+        ip = q.get()
+        print "Process Number: %s" % i
+        ret = subprocess.call("ping -c 1 %s" % ip,shell=True,stdout=open('/dev/null', 'w'),stderr=subprocess.STDOUT)
+        if ret == 0:
+            print (f"{ip}: is alive")
+            oq.put(ip)
+        else:
+            print (f"Process Number: {i} didn’t find a response for {ip}")
+            pass
     
 def snmp_query(i,out):
     while True:
@@ -52,15 +52,18 @@ def snmp_query(i,out):
         h.snmp_response = s.query()
         print h
         return h
+
 try:
-q.putmany(ips)
+    q.putmany(ips)
 finally:
-for i in range(num_workers):
-p = Process(target=f, args=[i,q,oq])
-p.start()
-for i in range(num_workers):
-pp = Process(target=snmp_query, args=[i,oq])
-pp.start()
+    for i in range(num_workers):
+        p = Process(target=f, args=[i,q,oq])
+        p.start()
+    
+    for i in range(num_workers):
+        pp = Process(target=snmp_query, args=[i,oq])
+        pp.start()
+
 print "main process joins on queue"
 p.join()
 #while not oq.empty():
