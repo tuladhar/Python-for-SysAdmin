@@ -875,8 +875,8 @@ None
 
 ## `Exploring Argparse` Command-Line Option and Argument Parsing
 
-Python built-in `argparse` is parser for command-line options, arguments and subcommands. The argparse module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and argparse will figure out how to parse those out of sys.argv. The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid arguments.
-Let’s show the sort of functionality that we are going to explore in this introductory tutorial by making use of the ls command:
+Python built-in `argparse` is parser for command-line options, arguments and subcommands. The argparse module provides argument management just like `sys.argv`, but with options, e.g it generates help and usage messages and issues errors when users give the program invalid arguments.
+Let’s show the sort of functionality by making use of the ls command:
 
 ```bash
 $ ls
@@ -904,8 +904,5 @@ To start using the argparse module, we first have to import it.
 
 ```py
 >>> import argparse
->>> parser = argparse.Argumentparser()
->>> parser.parse_args()
-Namespace()
-
 ```
+
