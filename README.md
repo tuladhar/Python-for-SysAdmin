@@ -910,6 +910,8 @@ To start using the argparse module, we first have to import it.
 The following code is a Python program that takes a list of integers and produces either the sum or the max:
 ##### Example
 ```py
+#!/usr/bin/env python3
+#app.py
 import argparse
 
 parser = argparse.ArgumentParser(description='Process some integers.')
@@ -920,7 +922,7 @@ parser.add_argument('--sum', dest='accumulate', action='store_const',
                    help='sum the integers (default: find the max)')
 
 args = parser.parse_args()
-print args.accumulate(args.integers)
+print(args.accumulate(args.integers))
 ```
 Assuming the Python code above is saved into a file called `app.py`, it can be run at the command line and provides useful help messages
 
