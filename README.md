@@ -942,7 +942,6 @@ $ app.py 1 2 3 4
 
 $ app.py 1 2 3 4 --sum
 10
-
 ```
 
 ### Creating a parser
@@ -956,7 +955,7 @@ The `ArgumentParser` object will hold all the information necessary to parse the
 
 ### Adding arguments
 
-Filling an`ArgumentParser` with information about program arguments is done by making calls to the :meth:`~ArgumentParser.add_argument` method. Generally, these calls tell the `ArgumentParser` how to take the strings on the command line and turn them into objects. This information is stored and used when :meth:`~ArgumentParser.parse_args` is called. For example:
+Filling an`ArgumentParser` with information about program arguments is done by making calls to the `ArgumentParser.add_argument` method. Generally, these calls tell the `ArgumentParser` how to take the strings on the command line and turn them into objects. This information is stored and used when `ArgumentParser.parse_args` is called. For example:
 
 ```py
 >>> parser.add_argument('integers', metavar='N', type=int, nargs='+',
@@ -966,11 +965,11 @@ Filling an`ArgumentParser` with information about program arguments is done by m
 ...                     help='sum the integers (default: find the max)')
 ```
 
-Later, calling :meth:`parse_args` will return an object with two attributes, integers and accumulate. The integers attribute will be a list of one or more ints, and the accumulate attribute will be either the `sum` function, if --sum was specified at the command line, or the `max` function if it was not.
+Later, calling `parse_args` will return an object with two attributes, integers and accumulate. The integers attribute will be a list of one or more ints, and the accumulate attribute will be either the `sum` function, if --sum was specified at the command line, or the `max` function if it was not.
 
 ### Parsing arguments
 
-`ArgumentParser` parses args through the :meth:`~ArgumentParser.parse_args` method. This will inspect the command-line, convert each arg to the appropriate type and then invoke the appropriate action. In most cases, this means a simple namespace object will be built up from attributes parsed out of the command-line:
+`ArgumentParser` parses args through the `ArgumentParser.parse_args` method. This will inspect the command-line, convert each arg to the appropriate type and then invoke the appropriate action. In most cases, this means a simple namespace object will be built up from attributes parsed out of the command-line:
 ```py
 >>> parser.parse_args(['--sum', '7', '-1', '42'])
 Namespace(accumulate=<built-in function sum>, integers=[7, -1, 42])
