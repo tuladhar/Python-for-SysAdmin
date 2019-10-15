@@ -907,8 +907,11 @@ To start using the argparse module, we first have to import it.
 ```
 
 #### Intro to positional arguments
-The following code is a Python program that takes a list of integers and produces either the sum or the max:
-##### Example
+
+ The following code is a Python program that takes a list of integers and produces either the sum or the max:
+
+#### Example
+
 ```py
 #!/usr/bin/env python3
 #app.py
