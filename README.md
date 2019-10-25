@@ -66,7 +66,8 @@ print ('Hello, world')
 sys.stdout.write('Hello, world\n')
 
 # writing to stderr pipe
-print (f'>> {sys.stderr}, "Error occured"')
+print("Error occured")
+sys.stderr.write("Error occured\n")
 
 # reading single line from stdin pipe
 sys.stdout.write('Username: ')
