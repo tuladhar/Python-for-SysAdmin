@@ -1145,3 +1145,8 @@ def sql_update(con):
  
 sql_update(con)
 ```
+
+### Select statement
+
+The select statement is used to select data from a particular table. If you want to select all the columns of the data from a table, you can use the asterisk (*). In SQLite3, the SELECT statement is executed in the execute method of the cursor object
+TODO - write example code not just select example
