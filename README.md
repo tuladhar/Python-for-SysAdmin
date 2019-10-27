@@ -1109,3 +1109,39 @@ con = sql_connection()
  
 sql_table(con)
 ```
+
+### Insert in Table
+
+We can pass values/arguments to an INSERT statement in the execute() method. You can use the question mark (?) as a placeholder for each value. The syntax of the INSERT and the entire code is as follows:
+
+```py
+import sqlite3
+
+con = sqlite3.connect('local.db')
+ 
+def sql_insert(con, entities): 
+    cursorObj = con.cursor()
+    cursorObj.execute('INSERT INTO employees(id, name, salary, department, position, hireDate) VALUES(?, ?, ?, ?, ?, ?)', entities)
+    con.commit()
+ 
+entities = (2, 'Andrew', 800, 'IT', 'Tech', '2018-02-06')
+ 
+sql_insert(con, entities)
+```
+
+### Update Table
+
+To update the table simply create a connection, then create a cursor object using the connection and finally use the UPDATE statement in the execute() method. Consider the following code:
+
+```py
+import sqlite3
+ 
+con = sqlite3.connect('mydatabase.db')
+ 
+def sql_update(con):
+    cursorObj = con.cursor()
+    cursorObj.execute('UPDATE employees SET name = "Rogers" where id = 2')
+    con.commit()
+ 
+sql_update(con)
+```
