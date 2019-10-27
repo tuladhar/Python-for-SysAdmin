@@ -998,3 +998,38 @@ Create a new `ArgumentParser` object. Each parameter has its own more detailed d
 - `usage` - The string describing the program usage (default: generated)
 
 #### [Learn more about argparse module](https://docs.python.org/3.7/library/argparse.html)
+
+## `Exploring SQLite Module` exploring-standard-modules-embedded-relational-database-module
+
+SQLite is a C-language library that implements a SQL like database engine which is relatively quick, serverless and self-contained, high-reliable. SQLite comes built-in with most of the moden software, hardware devices and browsers, thus Python also has embedded SQLite engine named sqlite3.
+
+### Create Connection
+
+To use SQLite3 in Python, first of all, you will have to import the sqlite3 module and then create a connection object which will connect us to the database and will let us execute the SQL statements.
+
+A connection object is created using the connect() function:
+
+```py
+import sqlite3
+ 
+con = sqlite3.connect('local.db')
+```
+
+ A new file called **local.db** will be created where our database will be stored.
+
+ ```bash
+>>> import sqlite3
+>>> con = sqlite3.connect('local.db')
+>>> ls -la
+ 0 -rw-r--r--  1 alex alex     0 Oct 27 17:00  local.db
+```
+
+### SQLite3 Cursor
+
+The SQLite3 cursor is a method of the connection object. To execute the SQLite3 statements, a connection is established at first and then an object of the cursor is created using the connection object. We need cursor object to call the execute() method to execute any SQL queries
+
+#### `Example`
+```py
+con = sqlite3.connect('local.db')
+cursorObj = con.cursor()
+```
