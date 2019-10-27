@@ -1033,3 +1033,29 @@ The SQLite3 cursor is a method of the connection object. To execute the SQLite3 
 con = sqlite3.connect('local.db')
 cursorObj = con.cursor()
 ```
+
+### Create Database
+
+When you create a connection with SQLite, a database file is automatically created if it doesn’t already exist. This database file is created on disk, we can also create a __in-memory__ database that is saved in RAM by using **:memory:**  with the connect function. 
+
+### `Example`
+```py
+import sqlite3
+from sqlite3 import Error
+
+def sql_connection():
+    try:
+        con = sqlite3.connect(':memory:')
+        print("Connection is established: Database is created in memory")
+    except Error:
+        print(Error)
+    finally:
+        con.close()
+sql_connection()
+```
+
+ After running the example code, you either get output:
+```bash
+Connection is established: Database is created in memory
+```
+ Or there will be a **RAM memory address** with an specific error printed
