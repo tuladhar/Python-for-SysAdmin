@@ -195,7 +195,7 @@ print('totat lines:', lines)
 ```
 
 ```bash
-$ cat /etc/passwd | python3 linescount.py          
+$ cat /etc/passwd | python3 linescount.py
 totat lines: 86
 $ python3 linescount.py /etc/services
 totat lines: 13921
