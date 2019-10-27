@@ -1043,19 +1043,69 @@ When you create a connection with SQLite, a database file is automatically creat
 import sqlite3
 from sqlite3 import Error
 
-def sql_connection():
-    try:
-        con = sqlite3.connect(':memory:')
-        print("Connection is established: Database is created in memory")
-    except Error:
-        print(Error)
-    finally:
-        con.close()
+def sql_connection(opt=':memory:'):
+	if opt == ':memory:'
+		try:
+			con = sqlite3.connect(':memory:')
+			print("Connection is established: Database is created in memory")
+		except Error:
+			print(Error)
+	else:
+		try:
+			con = sqlite3.connect(opt)
+			print("Connection is established: Database is created in ",opt)
+		except Error:
+			print(Error)
+		finally:
+			con.close()
+
 sql_connection()
 ```
 
  After running the example code, you either get output:
 ```bash
-Connection is established: Database is created in memory
+Connection is established: Database is created in memory 
 ```
- Or there will be a **RAM memory address** with an specific error printed
+
+*_or_*  in `local.db` in case you specified the the `local.db` name.
+
+```bash
+Connection is established: Database is created in local.db 
+```
+
+ Or there will be a **RAM memory address** with an specific error printed.
+
+
+### Create Table
+
+To create a table in SQLite3, you can use the Create Table query in the execute() method. Consider the following steps:
+
+- The connection object is created
+- Cursor object is created using the connection object
+- Using cursor object, execute method is called with create table query as the parameter
+
+Let us define two methods, the first one establishes a connection and the second method creates a cursor object to execute the create table statement.
+
+The commit() method saves all the changes we make. In the end, both methods are called.
+Let’s create employees with the following attributes:
+
+```py
+import sqlite3
+from sqlite3 import Error
+ 
+def sql_connection():
+    try:
+        con = sqlite3.connect('mydatabase.db')
+        return con
+    except Error:
+        print(Error)
+ 
+def sql_table(con):
+    cursorObj = con.cursor()
+    cursorObj.execute("CREATE TABLE employees(id integer PRIMARY KEY, name text, salary real, department text, position text, hireDate text)")
+    con.commit()
+ 
+con = sql_connection()
+ 
+sql_table(con)
+```
