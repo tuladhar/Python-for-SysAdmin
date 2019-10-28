@@ -21,11 +21,12 @@
   6. [Argparse Module](#exploring-standard-modules-argparse-module)<!--TODO -->
   6. [SQLite Module](#exploring-standard-modules-embedded-relational-database-module) 
   7. [XmlTree Module](#exploring-xmltree-module)
-  8. [Regular Expressions Module](#exprloting-standard-regular-expression-module)
-  9. [Compression Module](#exploring-compression-module)
-  10. [Platform Module](#exploring-platform-module)
-  11. [Signal Module](#exploring-standard-modules-signal-module)
-  12. [Socket Module](#exploring-standard-modules-socket-module)
+  8. [JSON Module](#exploring-json-module)
+  9. [Regular Expressions Module](#exprloting-standard-regular-expression-module)
+  10. [Compression Module](#exploring-compression-module)
+  11. [Platform Module](#exploring-platform-module)
+  12. [Signal Module](#exploring-standard-modules-signal-module)
+  13. [Socket Module](#exploring-standard-modules-socket-module)
 
 >3. **Exploring External Modules**
   >> ##### Network Modules
@@ -1018,6 +1019,5 @@ SQLite is a C-language library that implements a SQL like database engine which 
 - `cursor_object.rowcount` - The SQLite3 rowcount is used to return the number of rows that are affected or selected by the latest executed SQL query
 - `cursor_object.executemany` - It can use the **executemany** statement to insert multiple rows at once.
 - `connection.close` - You are done with your database, it is a good practice to close the connection with close() method. e.g. **connection.close()**
-
 
 #### [Learn More about SQLite3 Module](https://docs.python.org/3.7/library/sqlite3.html)
