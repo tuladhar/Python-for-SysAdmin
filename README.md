@@ -1009,15 +1009,38 @@ Create a new `ArgumentParser` object. Each parameter has its own more detailed d
 
 SQLite is a C-language library that implements a SQL like database engine which is relatively quick, serverless and self-contained, high-reliable. SQLite comes built-in with most of the moden software, hardware devices and browsers, thus Python also has embedded SQLite engine named sqlite3.
 
-##### Commonly used functions:
+To Start using the sqlite3 library:
 
-- `sqlite3.connect` - A connection object is created using the connect() function e.g **connection = sqlite.connect('name_of_file_db.db')**
-- `connection.cursor` - To execute SQLite statements, cursor object is needed. You can create it using the cursor() method. e.g **cursor_object = connection.cursor()**
-- `connection.execute` - To create a table in SQLite3, you can use the Create Table, Insert Into Table, Update Table, or Select query with the execute() method of SQLite library. For example **cursor_object.execute("CREATE TABLE employees()"); connection.commit()**
-- `connection.commit` - The commit() method saves all the changes we make.
-- `cursor_object.fetchall` -  To fetch the data from a database we will execute the SELECT statement and then will use the fetchall() method of the cursor object to store the values into a variable, e.g  **cursor_object.execute('SELECT * FROM employees') ; rows = cursor_object.fetchall()**
-- `cursor_object.rowcount` - The SQLite3 rowcount is used to return the number of rows that are affected or selected by the latest executed SQL query
-- `cursor_object.executemany` - It can use the **executemany** statement to insert multiple rows at once.
-- `connection.close` - You are done with your database, it is a good practice to close the connection with close() method. e.g. **connection.close()**
+```py
+>>> import sqlite3
+```
+
+#### Commonly used functions:
+
+- `sqlite3.connect()` - A connection object is created using the connect() function e.g **connection = sqlite.connect('name_of_file_db.db')**
+- `connection.cursor()` - To execute SQLite statements, cursor object is needed. You can create it using the cursor() method. e.g **cursor_object = connection.cursor()**
+- `connection.execute()` - To create a table in SQLite3, you can use the Create Table, Insert Into Table, Update Table, or Select query with the execute() method of SQLite library. For example **cursor_object.execute("CREATE TABLE employees()"); connection.commit()**
+- `connection.commit()` - The commit() method saves all the changes we make.
+- `cursor_object.fetchall()` -  To fetch the data from a database we will execute the SELECT statement and then will use the fetchall() method of the cursor object to store the values into a variable, e.g  **cursor_object.execute('SELECT * FROM employees') ; rows = cursor_object.fetchall()**
+- `cursor_object.rowcount()` - The SQLite3 rowcount is used to return the number of rows that are affected or selected by the latest executed SQL query
+- `cursor_object.executemany()` - It can use the **executemany** statement to insert multiple rows at once.
+- `connection.close()` - You are done with your database, it is a good practice to close the connection with close() method. e.g. **connection.close()**
 
 #### [Learn More about SQLite3 Module](https://docs.python.org/3.7/library/sqlite3.html)
+
+## `Exploring XmlTree Module` exploring-xmltree-module
+
+
+#### [Learn More about XmlTree Module](https://docs.python.org/3.7/library/xml.etree.elementtree.html#module-xml.etree.ElementTree)
+
+
+## `Exploring JSON Module` exploring-json-module
+
+JSON is text, written with JavaScript object notation. JSON is a syntax for storing and exchanging data.
+
+- `json.loads()`
+- `json.dumps()`
+
+
+
+#### [Learn More about JSON Module](https://docs.python.org/3.7/library/json.html)
