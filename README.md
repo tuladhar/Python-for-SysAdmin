@@ -911,7 +911,7 @@ To start using the argparse module, we first have to import it.
 
  The following code is a Python program that takes a list of integers and produces either the sum or the max:
 
-#### Example
+##### Example
 
 ```py
 #!/usr/bin/env python3
@@ -1010,14 +1010,14 @@ SQLite is a C-language library that implements a SQL like database engine which 
 
 ##### Commonly used functions:
 
-- `sqlite3.connect` - A connection object is created using the connect() function e.g `connection = sqlite.connect('name_of_file_db.db')`
-- `connection.cursor` - To execute SQLite statements, cursor object is needed. You can create it using the cursor() method. e.g `cursor_object = connection.cursor()`
-- `connection.execute` - To create a table in SQLite3, you can use the Create Table, Insert Into Table, Update Table, or Select query with the execute() method of .
-- `connection.commit`
-- `cursor_object.fetchall`
-- `cursor_object.rowcount`
-- `cursor_object.executemany`
-- `connection.close`
+- `sqlite3.connect` - A connection object is created using the connect() function e.g **connection = sqlite.connect('name_of_file_db.db')**
+- `connection.cursor` - To execute SQLite statements, cursor object is needed. You can create it using the cursor() method. e.g **cursor_object = connection.cursor()**
+- `connection.execute` - To create a table in SQLite3, you can use the Create Table, Insert Into Table, Update Table, or Select query with the execute() method of SQLite library. For example **cursor_object.execute("CREATE TABLE employees()"); connection.commit()**
+- `connection.commit` - The commit() method saves all the changes we make.
+- `cursor_object.fetchall` -  To fetch the data from a database we will execute the SELECT statement and then will use the fetchall() method of the cursor object to store the values into a variable, e.g  **cursor_object.execute('SELECT * FROM employees') ; rows = cursor_object.fetchall()**
+- `cursor_object.rowcount` - The SQLite3 rowcount is used to return the number of rows that are affected or selected by the latest executed SQL query
+- `cursor_object.executemany` - It can use the **executemany** statement to insert multiple rows at once.
+- `connection.close` - You are done with your database, it is a good practice to close the connection with close() method. e.g. **connection.close()**
 
 ### Create Connection
 
@@ -1044,7 +1044,7 @@ con = sqlite3.connect('local.db')
 
 The SQLite3 cursor is a method of the connection object. To execute the SQLite3 statements, a connection is established at first and then an object of the cursor is created using the connection object. We need cursor object to call the execute() method to execute any SQL queries
 
-#### `Example`
+##### `Example`
 
 ```py
 con = sqlite3.connect('local.db')
@@ -1055,7 +1055,7 @@ cursorObj = con.cursor()
 
 When you create a connection with SQLite, a database file is automatically created if it doesn’t already exist. This database file is created on disk, we can also create a __in-memory__ database that is saved in RAM by using **:memory:**  with the connect function. 
 
-### `Example`
+##### `Example`
 
 ```py
 import sqlite3
