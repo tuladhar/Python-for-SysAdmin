@@ -767,7 +767,7 @@ By default, `check_output` captures outputs written to `stdout`. Setting the `st
 
 ---
 
-###  Working directory with Popen
+### Working directory with Popen
 
 The `call()`, `check_call()`, and `check_output()` are wrappers around the `Popen` class. Using `Popen` directly gives more control over how the command is run and how its input and output streams are processed.
 
@@ -873,7 +873,6 @@ None
 
 #### [Learn more about subprocess module](https://docs.python.org/3.7/library/subprocess.html?highlight=subprocess#module-subprocess)
 
-
 ## `Exploring Argparse` Command-Line Option and Argument Parsing
 
 Python built-in `argparse` is parser for command-line options, arguments and subcommands. The argparse module provides argument management just like `sys.argv`, but with options, e.g it generates help and usage messages and issues errors when users give the program invalid arguments.
@@ -957,6 +956,7 @@ The first step in using the `argparse` is creating an `ArgumentParser` object:
 ```py
 >>> parser = argparse.ArgumentParser(description='Process some integers.')
 ```
+
 The `ArgumentParser` object will hold all the information necessary to parse the command line into python data types.
 
 ### Adding arguments
@@ -999,7 +999,6 @@ Create a new `ArgumentParser` object. Each parameter has its own more detailed d
 - `usage` - The string describing the program usage (default: generated)
 
 #### [Learn more about argparse module](https://docs.python.org/3.7/library/argparse.html)
-<<<<<<< HEAD
 
 ## `Exploring SQLite Module` exploring-standard-modules-embedded-relational-database-module
 
@@ -1152,5 +1151,3 @@ sql_update(con)
 
 The select statement is used to select data from a particular table. If you want to select all the columns of the data from a table, you can use the asterisk (*). In SQLite3, the SELECT statement is executed in the execute method of the cursor object
 TODO - write example code not just select example
-=======
->>>>>>> e98a92ad8b31f834ec38d4f48568cd53f3333f89
