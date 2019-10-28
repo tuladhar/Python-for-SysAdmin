@@ -638,9 +638,7 @@ The `time` module exposes the time-related functions from the underlying C libra
 
 The `datetime` module includes functions and classes for doing date and time parsing, formatting, and arithmetic.
 
-
-###### Commonly used functions:
-
+##### Commonly used functions:
 
 - `datetime.date.today()` returns current date object without the time
 - `datetime.datetime.today()` returns current date and time object
@@ -687,6 +685,7 @@ The module defines a many helper functions and a class called `Popen` which allo
 
 
 ### Running external commands
+
 To run an external command without interacting with, use `subprocess.call(command, shell=True)` function.
 
 ```python
@@ -895,10 +894,12 @@ List information about the FILEs (the current directory by default).
 Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
 ...
 ```
+
 A few concepts we can learn from the four commands:
-* When you run the "ls -l" command with options, it will default displaying the contents of the current directory
-* The "-l" is knowns as an "optional argument"
-* If you want to display the help text of the ls command, you would type "ls --help"
+
+- When you run the "ls -l" command with options, it will default displaying the contents of the current directory
+- The "-l" is knowns as an "optional argument"
+- If you want to display the help text of the ls command, you would type "ls --help"
 
 To start using the argparse module, we first have to import it. 
 
@@ -927,6 +928,7 @@ parser.add_argument('--sum', dest='accumulate', action='store_const',
 args = parser.parse_args()
 print(args.accumulate(args.integers))
 ```
+
 Assuming the Python code above is saved into a file called `app.py`, it can be run at the command line and provides useful help messages
 
 ```bash
@@ -976,10 +978,12 @@ Later, calling `parse_args` will return an object with two attributes, integers 
 ### Parsing arguments
 
 `ArgumentParser` parses args through the `ArgumentParser.parse_args` method. This will inspect the command-line, convert each arg to the appropriate type and then invoke the appropriate action. In most cases, this means a simple namespace object will be built up from attributes parsed out of the command-line:
+
 ```py
 >>> parser.parse_args(['--sum', '7', '-1', '42'])
 Namespace(accumulate=<built-in function sum>, integers=[7, -1, 42])
 ```
+
 In a script,`ArgumentParser.parse_args` will typically be called with no arguments, and the `ArgumentParser` will automatically determine the command-line args from `sys.argv`.
 
 ### ArgumentParser objects
@@ -1003,6 +1007,17 @@ Create a new `ArgumentParser` object. Each parameter has its own more detailed d
 ## `Exploring SQLite Module` exploring-standard-modules-embedded-relational-database-module
 
 SQLite is a C-language library that implements a SQL like database engine which is relatively quick, serverless and self-contained, high-reliable. SQLite comes built-in with most of the moden software, hardware devices and browsers, thus Python also has embedded SQLite engine named sqlite3.
+
+##### Commonly used functions:
+
+- `sqlite3.connect` - A connection object is created using the connect() function e.g `connection = sqlite.connect('name_of_file_db.db')`
+- `connection.cursor` - To execute SQLite statements, cursor object is needed. You can create it using the cursor() method. e.g `cursor_object = connection.cursor()`
+- `connection.execute` - To create a table in SQLite3, you can use the Create Table, Insert Into Table, Update Table, or Select query with the execute() method of .
+- `connection.commit`
+- `cursor_object.fetchall`
+- `cursor_object.rowcount`
+- `cursor_object.executemany`
+- `connection.close`
 
 ### Create Connection
 
@@ -1030,6 +1045,7 @@ con = sqlite3.connect('local.db')
 The SQLite3 cursor is a method of the connection object. To execute the SQLite3 statements, a connection is established at first and then an object of the cursor is created using the connection object. We need cursor object to call the execute() method to execute any SQL queries
 
 #### `Example`
+
 ```py
 con = sqlite3.connect('local.db')
 cursorObj = con.cursor()
@@ -1040,6 +1056,7 @@ cursorObj = con.cursor()
 When you create a connection with SQLite, a database file is automatically created if it doesn’t already exist. This database file is created on disk, we can also create a __in-memory__ database that is saved in RAM by using **:memory:**  with the connect function. 
 
 ### `Example`
+
 ```py
 import sqlite3
 from sqlite3 import Error
@@ -1064,6 +1081,7 @@ sql_connection()
 ```
 
  After running the example code, you either get output:
+
 ```bash
 Connection is established: Database is created in memory 
 ```
@@ -1075,7 +1093,6 @@ Connection is established: Database is created in local.db
 ```
 
  Or there will be a **RAM memory address** with an specific error printed.
-
 
 ### Create Table
 
