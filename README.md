@@ -13,7 +13,7 @@
   3. [Shell Modules](#exploring-standard-modules-shell-modules)
   4. [Date and Time Modules](#exploring-standard-modules-date-and-time-modules)
   5. [Subprocess Module](#exploring-standard-modules-subprocess-module)
-  6. [Argparse Module](#exploring-standard-modules-argparse-module)![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  6. [Argparse Module](#exploring-argparse-command-line-option-and-argument-parsing)
   6. [SQLite Module](#exploring-standard-modules-embedded-relational-database-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
   7. [XmlTree Module](#exploring-xmltree-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
   8. [JSON Module](#exploring-json-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
