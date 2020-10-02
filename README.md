@@ -1,42 +1,36 @@
-<center>
-<h1> Python3 for Systems Administrator </h1>
-</center>
+# Python3 for Systems Administrator
+[![Generic badge](https://img.shields.io/badge/Author-Puru_Tuladhar-<COLOR>.svg)](https://github.com/tuladhar)
+[![Generic badge](https://img.shields.io/badge/Editor_and_Maintainer-Silent_Mobius-<COLOR>.svg)](https://github.com/silent-mobius)
 
-### Author: [Puru Tuladhar](github.com/tuladhar)
-### Editor and Maintainer: [Silent-Mobius](github.com/silent-mobius)
-
->## Contents
-
->1. **Getting Started**
+## Contents
+- #### Getting Started
   1. [Standard I/O](#getting-started-standard-input-output-and-error)
   2. [Working with files](#getting-started-working-with-files)
   3. [Command-line Arguments](#getting-started-command-line-arguments)
-
->2. **Exploring Standard Modules**
+- #### Exploring Standard Modules
   1. [Operating System (OS) Module](#exploring-standard-modules-operating-system-os-module)
   2. [System-specific Module](#exploring-standard-modules-system-specific-module)
   3. [Shell Modules](#exploring-standard-modules-shell-modules)
   4. [Date and Time Modules](#exploring-standard-modules-date-and-time-modules)
   5. [Subprocess Module](#exploring-standard-modules-subprocess-module)
-  6. [Argparse Module](#exploring-standard-modules-argparse-module)<!--TODO -->
-  6. [SQLite Module](#exploring-standard-modules-embedded-relational-database-module)
-  7. [XmlTree Module](#exploring-xmltree-module)
-  8. [JSON Module](#exploring-json-module)
-  9. [Regular Expressions Module](#exprloting-standard-regular-expression-module)
-  10. [Compression Module](#exploring-compression-module)
-  11. [Platform Module](#exploring-platform-module)
-  12. [Signal Module](#exploring-standard-modules-signal-module)
-  13. [Socket Module](#exploring-standard-modules-socket-module)
+  6. [Argparse Module](#exploring-standard-modules-argparse-module)![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  6. [SQLite Module](#exploring-standard-modules-embedded-relational-database-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  7. [XmlTree Module](#exploring-xmltree-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  8. [JSON Module](#exploring-json-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  9. [Regular Expressions Module](#exprloting-standard-regular-expression-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  10. [Compression Module](#exploring-compression-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  11. [Platform Module](#exploring-platform-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  12. [Signal Module](#exploring-standard-modules-signal-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  13. [Socket Module](#exploring-standard-modules-socket-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
 
->3. **Exploring External Modules**
-  >> ##### Network Modules
-  1. [Netmiko Module](#exploring-standard-modules-netmiko-module)
-  2. [Twisted Module](#exploring-standard-modules-twisted-module)
-  3. [Ipaddress Module](#exploring-standard-modules-ipaddress-module)
-  4. [Netsnmp Module](#exploring-standard-modules-netsnmp-module)
-
-  >> ##### DB Modules
-  1. [SQLAlchemy Module](#exploring-standard-modules-sqlalchemy-module)
+- #### Exploring External Modules
+  -  #### Network Modules
+  1. [Netmiko Module](#exploring-standard-modules-netmiko-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  2. [Twisted Module](#exploring-standard-modules-twisted-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  3. [Ipaddress Module](#exploring-standard-modules-ipaddress-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  4. [Netsnmp Module](#exploring-standard-modules-netsnmp-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  - #### DB Modules
+  1. [SQLAlchemy Module](#exploring-standard-modules-sqlalchemy-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
 
 ---
 
