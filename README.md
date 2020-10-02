@@ -19,7 +19,7 @@
   4. [Date and Time Modules](#exploring-standard-modules-date-and-time-modules)
   5. [Subprocess Module](#exploring-standard-modules-subprocess-module)
   6. [Argparse Module](#exploring-standard-modules-argparse-module)<!--TODO -->
-  6. [SQLite Module](#exploring-standard-modules-embedded-relational-database-module) 
+  6. [SQLite Module](#exploring-standard-modules-embedded-relational-database-module)
   7. [XmlTree Module](#exploring-xmltree-module)
   8. [JSON Module](#exploring-json-module)
   9. [Regular Expressions Module](#exprloting-standard-regular-expression-module)
@@ -42,11 +42,11 @@
 
 ## `Getting Started` Standard Input, Output and Error
 
-Standard input, output and error (commonly referred as `stdin`, `stdout` and `stderr`) are what's called pipes.
+Standard input, output and error (commonly referred to as `stdin`, `stdout` and `stderr`) are what's called pipes.
 
 These pipes are normally connected to the terminal window where you are working.
 
-When printing something (using `print()`), it goes to the `stdout` pipe by default; when your program needs to print errors (like a traceback in Python), it goes to the `stderr` pipe; and when your program requires input from a user or other programs, it is goes to the `stdin` pipe.
+When printing something (using `print()`), it goes to the `stdout` pipe by default; when your program needs to print errors (like a traceback in Python), it goes to the `stderr` pipe; and when your program requires input from a user or other programs, it goes to the `stdin` pipe.
 
 ```bash
 $ cat /etc/passwd | grep /bin/bash
@@ -208,7 +208,7 @@ totat lines: 14023
 By default, `fileinput.input()` will read all lines from files given as an argument to the script; if no arguments given then defaults to standard input.
 
 ---
- 
+
 ## `Getting Started` Command-line Arguments
 
 `sys` module provides `argv` variable containing the list of arguments passed to the script when executed as a command-line application.
@@ -519,7 +519,7 @@ sys.exit(0)
 ```bash
 $ python3 sys-01.py
 
-Python version installed: 3.7.4 (default, Jul  9 2019, 16:48:28) 
+Python version installed: 3.7.4 (default, Jul  9 2019, 16:48:28)
 [GCC 8.3.1 20190223 (Red Hat 8.3.1-2)]
 
 Python running on platforn: linux
@@ -902,7 +902,7 @@ A few concepts we can learn from the four commands:
 - The "-l" is knowns as an "optional argument"
 - If you want to display the help text of the ls command, you would type "ls --help"
 
-To start using the argparse module, we first have to import it. 
+To start using the argparse module, we first have to import it.
 
 ```py
 >>> import argparse
