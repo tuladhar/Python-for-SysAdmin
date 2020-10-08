@@ -1028,13 +1028,71 @@ To Start using the sqlite3 library:
 #### [Learn More about XmlTree Module](https://docs.python.org/3.7/library/xml.etree.elementtree.html#module-xml.etree.ElementTree)
 
 
+
+
 ## `Exploring JSON Module` exploring-json-module
 
 JSON is text, written with JavaScript object notation. JSON is a syntax for storing and exchanging data.
+It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page
+and vice versa
+
 
 - `json.loads()`
+json. load() takes a file object and returns the json object. A JSON object contains data in the form of key/value pair. The keys are strings and the values are the JSON types
 - `json.dumps()`
+json.dumps() function converts a Python object into a json string
+.It is the exact opposite of json.loads.
+## THIS IS THE ENCODING DECODING LIST
+JSON Python
 
+object dict
 
+array list
+
+string str
+
+int  int
+
+real number float
+
+true True
+
+false False
+
+null None
+
+## Encoding is from python to JSON(final type)
+>>> json.JSONEncoder().encode({"foo": ["bar", "baz"]})
+'{"foo": ["bar", "baz"]}'
+
+## Decoding is from JSON to python(final type)
+
+# other commands
+
+iterencode(o)
+Encode the given object, o, and yield each string representation as available. For example:
+
+for chunk in json.JSONEncoder().iterencode(bigobject):
+    mysocket.write(chunk)
+    
+-sort-keys
+Sort the output of dictionaries alphabetically by key.
+
+-h, --help¶
+help box
+
+infile
+to check your Json file for syntax
+
+outfile
+Write the output of the infile to the given outfile
+# note 
+If the optional infile and outfile arguments are not specified, sys.stdin and sys.stdout will be used respectively:
+
+ json.tool 
+ to validate and pretty-print JSON objects.
+ 
+ raw_decode
+ This can be used to decode a JSON document from a string that may have extraneous data at the end.
 
 #### [Learn More about JSON Module](https://docs.python.org/3.7/library/json.html)
