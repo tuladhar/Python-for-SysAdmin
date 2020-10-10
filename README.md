@@ -1036,29 +1036,23 @@ JSON is text, written with JavaScript object notation. JSON is a syntax for stor
 It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page
 and vice versa
 - `json.loads()`
--json. load() takes a file object and returns the json object. A JSON object contains data in the form of key/value pair. The keys are strings and the values are the JSON types
+- take a file object and returns the json object. A JSON object contains data in the form of key/value pair. The keys are strings and the values are the JSON types
 - `json.dumps()`
 -json.dumps() function converts a Python object into a json string
 .It is the exact opposite of json.loads.
 
 ## THIS IS THE ENCODING DECODING LIST
-JSON  Python
+|  JSON|  Python |
+| object | DICT |
+|  array|list  |
+| string  | str  |
+| int  |  int |
+| real | number float |
+| true  |true   |
+| False  | False |
+|NULL   | NONE |
 
-object  dict
 
-array  list
-
-string  str
-
-int   int
-
-real  number float
-
-true  True
-
-false  False
-
-null  None
 
 
  - `  Encoding is from python to JSON(final type)`
