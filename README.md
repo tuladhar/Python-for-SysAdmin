@@ -1038,28 +1038,28 @@ and vice versa
 
 
 - `json.loads()`
-json. load() takes a file object and returns the json object. A JSON object contains data in the form of key/value pair. The keys are strings and the values are the JSON types
+-json. load() takes a file object and returns the json object. A JSON object contains data in the form of key/value pair. The keys are strings and the values are the JSON types
 - `json.dumps()`
-json.dumps() function converts a Python object into a json string
+-json.dumps() function converts a Python object into a json string
 .It is the exact opposite of json.loads.
 ## THIS IS THE ENCODING DECODING LIST
-JSON Python
+JSON  Python
 
-object dict
+object  dict
 
-array list
+array  list
 
-string str
+string  str
 
-int  int
+int   int
 
-real number float
+real  number float
 
-true True
+true  True
 
-false False
+false  False
 
-null None
+null  None
 
 ## Encoding is from python to JSON(final type)
 >>> json.JSONEncoder().encode({"foo": ["bar", "baz"]})
@@ -1067,32 +1067,34 @@ null None
 
 ## Decoding is from JSON to python(final type)
 
-# other commands
+## other commands
 
-iterencode(o)
-Encode the given object, o, and yield each string representation as available. For example:
+- `iterencode(o)`
+-Encode the given object, o, and yield each string representation as available. For example:
 
 for chunk in json.JSONEncoder().iterencode(bigobject):
     mysocket.write(chunk)
     
--sort-keys
-Sort the output of dictionaries alphabetically by key.
+    ` -sort-keys`
+-Sort the output of dictionaries alphabetically by key.
 
--h, --help¶
-help box
+`-h, --help¶`
+- help box
+ 
+`infile`
+-to check your Json file for syntax
 
-infile
-to check your Json file for syntax
+`outfile`
+-Write the output of the infile to the given outfile
 
-outfile
-Write the output of the infile to the given outfile
-# note 
+## note 
 If the optional infile and outfile arguments are not specified, sys.stdin and sys.stdout will be used respectively:
 
- json.tool 
- to validate and pretty-print JSON objects.
+  
+ `json.tool `
+- to validate and pretty-print JSON objects.
  
- raw_decode
- This can be used to decode a JSON document from a string that may have extraneous data at the end.
+ `raw_decode`
+- This can be used to decode a JSON document from a string that may have extraneous data at the end.
 
 #### [Learn More about JSON Module](https://docs.python.org/3.7/library/json.html)
