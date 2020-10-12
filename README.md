@@ -1041,16 +1041,17 @@ and vice versa
 -json.dumps() function converts a Python object into a json string
 .It is the exact opposite of json.loads.
 
-## THIS IS THE ENCODING DECODING LIST
-|  JSON|  Python |
-| object | DICT |
-|  array|list  |
-| string  | str  |
-| int  |  int |
-| real | number float |
+THIS IS THE ENCODING DECODING LIST
+
+|  JSON |Python |
+| object| DICT  |
+| array |list   |
+|string | str   |
+| int   |  int  |
+| real  | float |
 | true  |true   |
-| False  | False |
-|NULL   | NONE |
+| False | False |
+|NULL   | NONE  |
 
 
 
@@ -1062,7 +1063,7 @@ and vice versa
 
 - `Decoding is from JSON to python(final type)`
 
-## other commands
+## Encoding functions
 
 - `iterencode(o)`
 -Encode the given object, o, and yield each string representation as available. For example:
@@ -1073,7 +1074,7 @@ and vice versa
 `infile`-to check your Json file for syntax
 `outfile`-Write the output of the infile to the given outfile
 
-## note 
+## Note
 If the optional infile and outfile arguments are not specified, sys.stdin and sys.stdout will be used respectively: 
  `json.tool `- to validate and pretty-print JSON objects.
  `raw_decode`- This can be used to decode a JSON document from a string that may have extraneous data at the end.
