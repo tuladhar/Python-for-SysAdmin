@@ -1046,14 +1046,23 @@ and vice versa
 THIS IS THE ENCODING DECODING LIST
 
 |  JSON |Python |
+
 |---------------|
+
 | object| DICT  |
+
 | array | list   |
+
 | string | str   |
+
 | int   |  int  |
+
 | real  | float |
+
 | true  | true   |
+
 | False | False |
+
 | NULL   | NONE  |
 
 
