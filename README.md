@@ -1048,13 +1048,13 @@ THIS IS THE ENCODING DECODING LIST
 |  JSON |Python |
 |---------------|
 | object| DICT  |
-| array |list   |
-|string | str   |
+| array | list   |
+| string | str   |
 | int   |  int  |
 | real  | float |
-| true  |true   |
+| true  | true   |
 | False | False |
-|NULL   | NONE  |
+| NULL   | NONE  |
 
 
 
