@@ -16,7 +16,7 @@
   6. [Argparse Module](#exploring-argparse-command-line-option-and-argument-parsing)
   6. [SQLite Module](#exploring-standard-modules-embedded-relational-database-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
   7. [XmlTree Module](#exploring-xmltree-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
-  8. [JSON Module](#exploring-json-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
+  8. [JSON Module](#exploring-json-module)
   9. [Regular Expressions Module](#exprloting-standard-regular-expression-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
   10. [Compression Module](#exploring-compression-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
   11. [Platform Module](#exploring-platform-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
@@ -1044,6 +1044,7 @@ and vice versa
 THIS IS THE ENCODING DECODING LIST
 
 |  JSON |Python |
+| -----------:  | 
 | object| DICT  |
 | array |list   |
 |string | str   |
