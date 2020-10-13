@@ -1045,25 +1045,15 @@ and vice versa
 
 THIS IS THE ENCODING DECODING LIST
 
-|  JSON |Python |
-
-|---------------|
-
-| object| DICT  |
-
-| array | list  |
-
-|string | str   |
-
-| int   |  int  |
-
-| real  | float |
-
-| true  | true  |
-
-| False | False |
-
-| NULL  | NONE  |
+ JSON -Python 
+ 1)object- DICT  
+ 2)array - list  
+  3)string - str   
+ 4)int  -  int  
+ 5)real  - float 
+6)true  -true  
+ 7)False - False 
+ 8)NULL  - NONE  
 
 
 
