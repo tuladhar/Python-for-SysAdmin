@@ -1051,19 +1051,19 @@ THIS IS THE ENCODING DECODING LIST
 
 | object| DICT  |
 
-| array | list   |
+| array | list  |
 
-| string | str   |
+|string | str   |
 
 | int   |  int  |
 
 | real  | float |
 
-| true  | true   |
+| true  | true  |
 
 | False | False |
 
-| NULL   | NONE  |
+| NULL  | NONE  |
 
 
 
