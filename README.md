@@ -1044,7 +1044,7 @@ and vice versa
 THIS IS THE ENCODING DECODING LIST
 
 |  JSON |Python |
-| -----------:  | 
+|---------------|  
 | object| DICT  |
 | array |list   |
 |string | str   |
@@ -1078,6 +1078,7 @@ THIS IS THE ENCODING DECODING LIST
 ## Note
 If the optional infile and outfile arguments are not specified, sys.stdin and sys.stdout will be used respectively: 
  `json.tool `- to validate and pretty-print JSON objects.
+ 
  `raw_decode`- This can be used to decode a JSON document from a string that may have extraneous data at the end.
 
 #### [Learn More about JSON Module](https://docs.python.org/3.7/library/json.html)
