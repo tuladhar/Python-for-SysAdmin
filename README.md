@@ -17,6 +17,7 @@
   6. [SQLite Module](#exploring-standard-modules-embedded-relational-database-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
   7. [XmlTree Module](#exploring-xmltree-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
   8. [JSON Module]( #exploring-json-module-exploring-json-module)
+  8. [CSV Module]( #exploring-csv-module-exploring-csv-module)
   9. [Regular Expressions Module](#exprloting-standard-regular-expression-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
   10. [Compression Module](#exploring-compression-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
   11. [Platform Module](#exploring-platform-module) ![Generic badge](https://img.shields.io/badge/Coming%20-Soon-blue)
@@ -1089,3 +1090,82 @@ If the optional infile and outfile arguments are not specified, sys.stdin and sy
  `raw_decode`- This can be used to decode a JSON document from a string that may have extraneous data at the end.
 
 #### [Learn More about JSON Module](https://docs.python.org/3.7/library/json.html)
+
+
+## `Exploring CSV Module` exploring-csv-module
+CSV - comma-separated values file is a text file with it's content delimited by comma (most often but any other delimiter is acceptable, yet it is advised to stick to the standards) defined by RFC 4180.
+These files are really useful when it comes to share, read and save data. Structure of such file is very simple:
+```csv
+header1,header2,header3
+datacell11,datacell12,datacell13
+datacell21,datacell22,datacell23
+datacell31,datacell32,datacell33
+```
+You can easily read and write CSV files with Python using `csv` module. To open CSV file we need code like this:
+```python
+import csv
+with open('file.csv') as f:
+    f_csv = csv.reader(f, delimiter=',', quotechar='"')
+    headers = next(f_csv)   # this line uses next() function to save first row of the file and skip it. Rest is our data.
+    # now we are ready to process our rows. Example:
+    for row in f_csv:
+        print(row[0], row[1], row[2])
+```
+Script would just print data like this:
+```shell
+$> datacell11 datacell12 datacell13
+$> datacell21 datacell22 datacell23
+$> datacell31 datacell32 datacell33
+```
+Here's explanation for some parameters of `csv.reader`:
+
+`delimiter` - is as it name shows - character or set of them that determines where are columns of value and how they are separated
+
+`quotechar` - is a char starting and ending a quote in our CSV file. It prevents our script from breaking output when we would have somethin like: `datacell21,"datacell22",datacell23`
+
+If the file is more complicated than this (and it probably will) it is advised to use DictReader. It would look like this:
+```python
+import csv
+with open('file.csv') as f:
+    f_csv = csv.DictReader(f, delimiter=',', quotechar='"')
+    headers = next(f_csv)   # this line uses next() function to save first row of the file and skip it. Rest is our data.
+    # now we are ready to process our rows. Example:
+    for row in f_csv:
+        print(row['header1'], row['header2'], row['header3'])
+```
+Instead of column indexes it is possible to use their names from header.
+
+To write file we can simply do this:
+```python
+import csv
+data = [
+    ['data1', 'data2', 'data3'],
+    ['data4', 'data5', 'data6']
+    # ...
+]
+with open('newfile.csv', 'w') as nf:
+    headers = ['header_1', 'header_2', 'header_3']
+    csv_writer = csv.writer(nf)
+    csv_writer.writerow(headers)
+    csv_writer.writerows(data)
+```
+We use `writerow` for writing header for our data and then `writerows` to simply handle a few(hundred) rows of data
+
+Alternatively we DictWriter can be used:
+```python
+import csv
+
+data = [
+    {'header_1': 'data1', 'header_2': 'data2', 'header_3': 'data3'},
+    {'header_1': 'data4', 'header_2': 'data5', 'header_3': 'data6'},
+    {'header_1': 'data7', 'header_2': 'data8', 'header_3': 'data9'}
+]
+with open('countries.csv', 'w', encoding='UTF8', newline='') as f:
+    headers = ['header_1', 'header_2', 'header_3']
+    writer = csv.DictWriter(f, fieldnames=headers)
+    writer.writeheader()
+    writer.writerows(data)
+```
+
+#### [Learn More about CSV Module](https://docs.python.org/3/library/csv.html)
+
