@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "systems-engineering-lab"
+version = "0.1.0"
+description = "Beginner-friendly Python exercises for systems and network engineering"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+include = ["syseng_lab*"]
