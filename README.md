@@ -2,6 +2,33 @@
 [![Generic badge](https://img.shields.io/badge/Author-Puru_Tuladhar-<COLOR>.svg)](https://github.com/tuladhar)
 [![Generic badge](https://img.shields.io/badge/Editor_and_Maintainer-Silent_Mobius-<COLOR>.svg)](https://github.com/silent-mobius)
 
+## Systems Engineering Learning Lab
+
+This repository is now also a practical, beginner-friendly path for learning
+systems engineering and network engineering with Python. The new `syseng_lab`
+package uses only the standard library, so there is nothing extra to install.
+Each command is read-only and gives you a small, useful problem to understand,
+modify, and eventually extend.
+
+### Start here
+
+```bash
+python -m syseng_lab lessons
+python -m syseng_lab system-info
+python -m syseng_lab disk-usage .
+python -m syseng_lab subnet 192.168.1.0/24
+python -m syseng_lab check-ports localhost 22 80 443
+python -m unittest discover -s tests -v
+```
+
+Work through the commands in order. Read the implementation after each run,
+make one change, and run it again. Good next challenges are adding CSV output,
+reading a list of hosts from a file, writing a retry policy, and adding tests
+for your changes. Only scan systems you own or have permission to test.
+
+The original `examples/` directory remains available as a reference for
+subprocesses, files, concurrency, and other Python fundamentals.
+
 ## Contents
 - #### Getting Started
   1. [Standard I/O](#getting-started-standard-input-output-and-error)
@@ -1168,4 +1195,3 @@ with open('countries.csv', 'w', encoding='UTF8', newline='') as f:
 ```
 
 #### [Learn More about CSV Module](https://docs.python.org/3/library/csv.html)
-
