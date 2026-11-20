@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # check_call.py
-
-import sys
 import subprocess
+import sys
+
+cmd = ["ls", "/no/such/dir"]
+print("running command:", " ".join(cmd))
 
 try:
-	cmd = 'false'
-	print ('running command:',cmd)
-	subprocess.check_call(cmd, shell=True)
-except subprocess.CalledProcessError as error:
-	sys.exit('error: {}'.format(error))
+    subprocess.run(cmd, check=True, capture_output=True, text=True)
+except subprocess.CalledProcessError as e:
+    sys.exit(f"error: exit code {e.returncode}: {e.stderr.strip()}")

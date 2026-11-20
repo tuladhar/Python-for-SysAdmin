@@ -1,30 +1,35 @@
 #!/usr/bin/env python3
-#tcp_port_checker.py
-
+# tcp_port_checker.py
+import argparse
 import socket
-import re
 import sys
 
-def check_server(address, port):
-    #create a TCP socket
-    s = socket.socket()
-    print (f"Attempting to connect to {address} on port {port}")
+
+def check(host, port, timeout):
     try:
-        s.connect((address, port))
-        print(f"Connected to {address} on port {port}")
-        return True
-    except socket.error as e:
-        print(f"Connection to {address} on port {port} failed: {e}")
+        with socket.create_connection((host, port), timeout=timeout):
+            return True
+    except OSError:
         return False
 
 
-if __name__ == '__main__':
-    from optparse import OptionParser
-    parser = OptionParser()
-    parser.add_option("-a", "--address", dest="address", default='localhost', help="ADDRESS for server", metavar="ADDRESS")
-    parser.add_option("-p", "--port", dest="port", type="int", default=80, help="PORT for server", metavar="PORT")
-    (options, args) = parser.parse_args()
-    print(f'options: {options}, args:{args}')
-    check = check_server(options.address, options.port)
-    print(f'check_server returned {check}')
-    sys.exit(not check)
+def main():
+    parser = argparse.ArgumentParser(description="Check if TCP ports are open.")
+    parser.add_argument("host", help="hostname or IP address")
+    parser.add_argument("-p", "--port", type=int, nargs="+", default=[22, 80, 443],
+                        help="ports to check (default: 22 80 443)")
+    parser.add_argument("-t", "--timeout", type=float, default=3.0,
+                        help="seconds to wait per port (default: 3)")
+    args = parser.parse_args()
+
+    all_open = True
+    for port in args.port:
+        is_open = check(args.host, port, args.timeout)
+        all_open = all_open and is_open
+        print(f"{args.host}:{port:<5} {'open' if is_open else 'CLOSED'}")
+
+    sys.exit(0 if all_open else 1)
+
+
+if __name__ == "__main__":
+    main()

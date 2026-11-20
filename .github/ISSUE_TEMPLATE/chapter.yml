@@ -1,0 +1,32 @@
+name: Chapter request or proposal
+description: Suggest a new chapter, or claim one from the "Help wanted" list.
+title: "Chapter: "
+labels: ["chapter", "help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping the community! See [CONTRIBUTING.md](https://github.com/tuladhar/Python-for-SysAdmin/blob/main/CONTRIBUTING.md) for how chapters are written.
+  - type: input
+    id: module
+    attributes:
+      label: Module or topic
+      placeholder: e.g. re, logging, paramiko
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it useful for sysadmins and DevOps engineers?
+      placeholder: Real tasks this chapter would help with.
+    validations:
+      required: true
+  - type: dropdown
+    id: write
+    attributes:
+      label: Do you want to write it?
+      options:
+        - Yes, I'll open a pull request
+        - I'd like someone else to write it
+    validations:
+      required: true

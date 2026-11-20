@@ -1,30 +1,19 @@
 #!/usr/bin/env python3
-# sys-01.py
-
+# sys_01.py
 import sys
-from sys import argv
 
-print (f'''
-Python version installed: {sys.version}
+print(f"Python version: {sys.version}")
+print(f"Running on platform: {sys.platform}")
+print(f"Interpreter: {sys.executable}")
 
-Python running on platforn: {sys.platform}
-''')
+if len(sys.argv) > 10:
+    sys.exit("error: too many arguments")
 
-if len(argv) == 10:
-	sys.exit('error: too many arguments')
+print(f"argv = {sys.argv}")
+print("Printing to stdout")
+print("Printing to stderr", file=sys.stderr)
 
-print(f'''
-argv = {argv}
-len(argv) = {len(argv)}
-''')
+print(f"module search paths: {len(sys.path)}")
+print(f"modules loaded: {len(sys.modules)}")
 
-print ('Printing to stdout')
-print (f'>> {sys.stderr}, "Printing to stderr"')
-
-print(f'''
-total modules search path: {len(sys.path)}
-total modules loaded: {len(sys.modules)}
-''')
-
-# success
-sys.exit(0)
+sys.exit(0)  # success

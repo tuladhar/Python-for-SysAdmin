@@ -1,0 +1,51 @@
+{
+  "sections": [
+    {
+      "title": "Getting Started",
+      "chapters": [
+        { "slug": "set-up-your-lab", "file": "01-set-up-your-lab.md", "title": "Set Up Your Lab", "summary": "A free Linux VM in your browser, or Python on your own machine." },
+        { "slug": "standard-io", "file": "02-standard-io.md", "title": "Standard Input, Output and Error", "summary": "stdin, stdout, stderr and writing scripts that work in pipelines." },
+        { "slug": "working-with-files", "file": "03-working-with-files.md", "title": "Working with Files", "summary": "open(), with, pathlib and fileinput for configs and logs." },
+        { "slug": "command-line-arguments", "file": "04-command-line-arguments.md", "title": "Command-line Arguments", "summary": "sys.argv, exit codes and a tiny grep." }
+      ]
+    },
+    {
+      "title": "Standard Library",
+      "chapters": [
+        { "slug": "os", "file": "05-os-module.md", "title": "The os Module", "summary": "Environment variables, directories, os.walk and system info." },
+        { "slug": "sys", "file": "06-sys-module.md", "title": "The sys Module", "summary": "Interpreter info, version checks and why exit codes matter." },
+        { "slug": "shutil-and-glob", "file": "07-shutil-and-glob.md", "title": "shutil and glob", "summary": "Copy, move, archive, check disk usage and match wildcards." },
+        { "slug": "date-and-time", "file": "08-date-and-time.md", "title": "Date and Time", "summary": "Durations, UTC, time zones and pruning old backups." },
+        { "slug": "subprocess", "file": "09-subprocess.md", "title": "Running Commands with subprocess", "summary": "subprocess.run(), capturing output, errors and streaming." },
+        { "slug": "argparse", "file": "10-argparse.md", "title": "Building CLIs with argparse", "summary": "Flags, defaults, --help and subcommands for real tools." }
+      ]
+    },
+    {
+      "title": "Data and Networking",
+      "chapters": [
+        { "slug": "json", "file": "11-json.md", "title": "Working with JSON", "summary": "Parse API, kubectl and docker output; call a JSON API." },
+        { "slug": "csv", "file": "12-csv.md", "title": "Working with CSV", "summary": "Inventories and reports with csv.DictReader and DictWriter." },
+        { "slug": "sqlite", "file": "13-sqlite.md", "title": "SQLite: a Database in a File", "summary": "A zero-setup SQL database for inventories and job history." },
+        { "slug": "socket", "file": "14-socket.md", "title": "Network Checks with socket", "summary": "Port checks, DNS lookups and parallel sweeps." }
+      ]
+    }
+  ],
+  "wanted": [
+    { "title": "Regular Expressions", "module": "re", "summary": "Parse log lines, extract IPs and validate input." },
+    { "title": "Logging", "module": "logging", "summary": "Proper log levels, files and syslog for your scripts." },
+    { "title": "Compression and Archives", "module": "gzip, tarfile, zipfile", "summary": "Create and extract backups and rotate logs." },
+    { "title": "XML with ElementTree", "module": "xml.etree", "summary": "Read and modify XML configs and API responses." },
+    { "title": "Platform Information", "module": "platform", "summary": "Detect OS, distro, architecture and Python build." },
+    { "title": "Signals", "module": "signal", "summary": "Handle SIGTERM and SIGHUP for graceful shutdown and reloads." },
+    { "title": "IP Addresses and Networks", "module": "ipaddress", "summary": "Subnets, CIDR math and validating addresses." },
+    { "title": "Concurrency", "module": "concurrent.futures, asyncio", "summary": "Run checks and commands on many hosts at once." },
+    { "title": "HTTP APIs", "module": "urllib, requests, httpx", "summary": "Talk to REST APIs, webhooks and health endpoints." },
+    { "title": "SSH Automation", "module": "paramiko, fabric", "summary": "Run commands and copy files on remote servers." },
+    { "title": "System Metrics", "module": "psutil", "summary": "CPU, memory, disk and process info across platforms." },
+    { "title": "Network Devices", "module": "netmiko", "summary": "Automate switches and routers over SSH." },
+    { "title": "Cloud Automation", "module": "boto3", "summary": "Script AWS: EC2, S3, IAM and cost reports." },
+    { "title": "Docker and Kubernetes", "module": "docker, kubernetes", "summary": "Manage containers and clusters from Python." },
+    { "title": "Templating Configs", "module": "jinja2", "summary": "Generate nginx, systemd and YAML files from templates." },
+    { "title": "Testing Your Scripts", "module": "pytest", "summary": "Test automation before it touches production." }
+  ]
+}
