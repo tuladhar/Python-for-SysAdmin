@@ -1,9 +1,22 @@
 name: Check examples
 
+# Runs only when code or chapters change: README-only PRs skip it.
 on:
   pull_request:
+    paths:
+      - "chapters/**"
+      - "examples/**"
+      - "scripts/**"
+      - "*.py"
+      - ".github/workflows/check.yml"
   push:
     branches: [main]
+    paths:
+      - "chapters/**"
+      - "examples/**"
+      - "scripts/**"
+      - "*.py"
+      - ".github/workflows/check.yml"
 
 jobs:
   test:
@@ -21,5 +34,7 @@ jobs:
         run: python3 -c "import json; m = json.load(open('chapters/chapters.json')); import os; [open(os.path.join('chapters', c['file'])) for s in m['sections'] for c in s['chapters']]"
       - name: Run every example script
         run: scripts/test_examples.sh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - name: Run every inline snippet in the chapters
         run: python3 scripts/check_snippets.py
