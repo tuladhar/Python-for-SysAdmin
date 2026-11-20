@@ -65,7 +65,6 @@ This guide is written by the community. Fixing a typo is as welcome as writing a
 ## Credits
 
 - Author: [Puru Tuladhar](https://github.com/tuladhar)
-- Editor and maintainer: [Silent Mobius](https://github.com/silent-mobius)
 - And [everyone who contributed](https://github.com/tuladhar/Python-for-SysAdmin/graphs/contributors) ❤️
 
 Licensed under the terms in [LICENSE](LICENSE).
