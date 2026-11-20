@@ -1,0 +1,25 @@
+name: Check examples
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Validate chapters.json
+        run: python3 -c "import json; m = json.load(open('chapters/chapters.json')); import os; [open(os.path.join('chapters', c['file'])) for s in m['sections'] for c in s['chapters']]"
+      - name: Run every example script
+        run: scripts/test_examples.sh
+      - name: Run every inline snippet in the chapters
+        run: python3 scripts/check_snippets.py
