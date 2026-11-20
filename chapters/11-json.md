@@ -114,14 +114,22 @@ for line in result.stdout.splitlines():
 #!/usr/bin/env python3
 # github_stars.py
 import json
+import os
 import urllib.request
 
 url = "https://api.github.com/repos/tuladhar/Python-for-SysAdmin"
-with urllib.request.urlopen(url, timeout=10) as response:
+request = urllib.request.Request(url)
+token = os.environ.get("GITHUB_TOKEN")
+if token:  # optional: raises the rate limit from 60 to 5,000 requests per hour
+    request.add_header("Authorization", f"Bearer {token}")
+
+with urllib.request.urlopen(request, timeout=10) as response:
     repo = json.load(response)
 
 print(f"{repo['full_name']} has {repo['stargazers_count']} stars")
 ```
+
+> Without a token, the GitHub API allows only 60 requests per hour per IP address. Shared networks (offices, CI runners) hit that limit quickly and get `HTTP Error 403: rate limit exceeded`. Reading secrets from environment variables, never from the script itself, keeps them out of Git.
 
 ## Exercises
 
