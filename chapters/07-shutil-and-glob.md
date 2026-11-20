@@ -31,9 +31,11 @@ Two modules replace most of the file-shuffling you do with `cp`, `mv`, `rm -r`, 
 >>> total, used, free = shutil.disk_usage("/")
 >>> f"{used / total:.0%} used"
 '63% used'
->>> shutil.make_archive("/tmp/etc-backup", "gztar", "/etc/ssh")
-'/tmp/etc-backup.tar.gz'
+>>> shutil.make_archive("/tmp/home-backup", "gztar", ".")   # archive the current directory
+'/tmp/home-backup.tar.gz'
 ```
+
+> Copying or archiving system directories like `/etc/ssh` raises `PermissionError` as a normal user, because some files (such as SSH host keys) are readable only by root. Run the script with `sudo`, or catch the error and skip those files.
 
 ## Example: alert when the disk is almost full
 
