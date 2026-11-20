@@ -63,11 +63,15 @@ Use `csv.writer` and `writer.writerow([...])` if you're working with lists inste
 
 ## Other delimiters
 
-Many "CSV" files are really tab- or semicolon-separated. Pass `delimiter`:
+Many "CSV" files are really tab- or semicolon-separated. Pass `delimiter`, e.g. `delimiter="\t"` or `delimiter=";"`:
 
 ```python
-csv.reader(f, delimiter="\t")
-csv.DictReader(f, delimiter=";")
+import csv
+import io
+
+tsv = io.StringIO("web-01\t10.0.0.10\nweb-02\t10.0.0.11\n")  # stands in for an open file
+for row in csv.reader(tsv, delimiter="\t"):
+    print(row)
 ```
 
 ## Example: export local users to CSV

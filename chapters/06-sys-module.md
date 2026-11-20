@@ -63,8 +63,8 @@ If your script uses newer features, check the version at the top and exit with a
 ```python
 import sys
 
-if sys.version_info < (3, 10):
-    sys.exit(f"this script needs Python 3.10+, you have {sys.version.split()[0]}")
+if sys.version_info < (3, 11):
+    sys.exit(f"this script needs Python 3.11+, you have {sys.version.split()[0]}")
 ```
 
 ## Exit codes matter

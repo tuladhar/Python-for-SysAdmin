@@ -37,6 +37,8 @@ Use `":memory:"` instead of a file name for a temporary in-memory database, whic
 Pass values with `?` placeholders, never with f-strings. The driver escapes them, which protects you from SQL injection and from names like `O'Brien`:
 
 ```python
+role = "web"
+
 # good
 con.execute("SELECT * FROM hosts WHERE role = ?", (role,))
 

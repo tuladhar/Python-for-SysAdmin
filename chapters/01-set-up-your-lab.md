@@ -38,7 +38,7 @@ Most Linux distributions and macOS already ship Python 3. Check it:
 python3 --version
 ```
 
-You want **Python 3.10 or newer**. Every example in this guide uses only the standard library, so there is nothing to install with `pip`.
+You want **Python 3.11 or newer**. Every example in this guide uses only the standard library, so there is nothing to install with `pip`.
 
 If you need a newer Python, [uv](https://docs.astral.sh/uv/) is the quickest way to get one without touching the system Python:
 

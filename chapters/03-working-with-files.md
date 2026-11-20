@@ -2,7 +2,7 @@
 
 Config files, logs, inventories, CSV exports: most sysadmin scripts start by reading a file. Python's built-in `open()` is the standard interface for that.
 
-```python
+```text
 open(file, mode="r", encoding=None)
 ```
 

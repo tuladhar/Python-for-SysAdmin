@@ -63,6 +63,10 @@ You wrote no help text formatting and no validation, and you still got both.
 ## The arguments you'll use most
 
 ```python
+import argparse
+
+parser = argparse.ArgumentParser()
+
 # positional (required)
 parser.add_argument("host")
 
@@ -131,6 +135,8 @@ github.com:8080  CLOSED
 Tools like `git` and `kubectl` have subcommands (`git commit`, `git push`). Use `add_subparsers()`:
 
 ```python
+import argparse
+
 parser = argparse.ArgumentParser(prog="svc")
 sub = parser.add_subparsers(dest="command", required=True)
 

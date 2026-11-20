@@ -19,6 +19,7 @@ chapters/
   ...
 examples/              # every runnable script from the chapters
 assets/                # images and GIFs used by chapters
+scripts/               # tests: test_examples.sh and check_snippets.py
 ```
 
 The website reads `chapters/chapters.json`, then loads each chapter's Markdown file straight from the `main` branch.
@@ -49,7 +50,7 @@ Look at [`09-subprocess.md`](chapters/09-subprocess.md) for a good template.
 
 - Start with a `# Title` and one or two sentences on **why a sysadmin needs this**.
 - Short sections with `##` headings. Explain one idea, then show it.
-- Use **Python 3.10+** and the standard library unless the chapter is about a third-party package.
+- Use **Python 3.11+** and the standard library unless the chapter is about a third-party package.
 - Use `pathlib`, f-strings, `subprocess.run()`, `with` blocks and `encoding="utf-8"`.
 - Every complete script starts with `#!/usr/bin/env python3` and a `# filename.py` comment, and must run as shown.
 - Show the command and its output in a separate `bash` block.
@@ -58,6 +59,17 @@ Look at [`09-subprocess.md`](chapters/09-subprocess.md) for a good template.
 - Use simple, plain English. Many readers are not native speakers.
 
 Preview your Markdown in the GitHub pull request "Preview" tab or any Markdown viewer.
+
+### Test before you open a pull request
+
+Two scripts check that everything in the guide actually runs. GitHub Actions runs them on every pull request, on Python 3.11 and the latest Python:
+
+```bash
+scripts/test_examples.sh          # runs every script in examples/ and checks its exit code
+python3 scripts/check_snippets.py # runs every inline snippet in chapters/
+```
+
+If you add a script to `examples/`, add a line for it to `scripts/test_examples.sh`. The quickest place to run them is the free [iximiuz Labs Python Playground](https://labs.iximiuz.com/playgrounds/python).
 
 ## Adding a GIF
 

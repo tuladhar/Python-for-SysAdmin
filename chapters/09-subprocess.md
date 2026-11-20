@@ -59,6 +59,9 @@ Two more errors are worth catching in real scripts:
 - `subprocess.TimeoutExpired` if you pass `timeout=` and the command hangs.
 
 ```python
+import subprocess
+import sys
+
 try:
     subprocess.run(["ping", "-c", "1", "10.0.0.1"], check=True, timeout=5)
 except FileNotFoundError:
@@ -74,9 +77,9 @@ except subprocess.CalledProcessError:
 Use `input=` to write to the command's `stdin`:
 
 ```python
->>> result = subprocess.run(["bc"], input="1 + 1\n", capture_output=True, text=True)
+>>> result = subprocess.run(["sort"], input="web-02\nweb-01\n", capture_output=True, text=True)
 >>> result.stdout
-'2\n'
+'web-01\nweb-02\n'
 ```
 
 ## When you need a shell

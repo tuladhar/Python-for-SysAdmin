@@ -16,7 +16,7 @@ import socket
 import socket
 
 
-def is_open(host, port, timeout=5):
+def is_open(host, port, timeout=3):
     try:
         with socket.create_connection((host, port), timeout=timeout):
             return True
@@ -24,16 +24,18 @@ def is_open(host, port, timeout=5):
         return False
 
 
-for host, port in [("google.com", 80), ("google.com", 81), ("localhost", 22)]:
-    print(f"{host}:{port} is {'up' if is_open(host, port) else 'down'}")
+for host, port in [("github.com", 443), ("github.com", 8080), ("localhost", 22)]:
+    print(f"{host}:{port} is {'up' if is_open(host, port) else 'down'}", flush=True)
 ```
 
 ```bash
 $ python3 port_check.py
-google.com:80 is up
-google.com:81 is down
+github.com:443 is up
+github.com:8080 is down
 localhost:22 is up
 ```
+
+> The timeout applies to **each address** the name resolves to. `google.com` has a dozen IPv4 and IPv6 addresses, so a closed port there can take `12 × timeout` to report as down. Keep timeouts short, or check a specific IP.
 
 > For a full CLI around this function, see the TCP port checker in the [argparse chapter](10-argparse.md).
 
@@ -72,25 +74,44 @@ Checking 200 hosts one after another with a 5 second timeout can take minutes. `
 ```python
 #!/usr/bin/env python3
 # sweep.py
-from concurrent.futures import ThreadPoolExecutor
+import ipaddress
 import socket
+import sys
+from concurrent.futures import ThreadPoolExecutor
 
 
 def is_open(target):
     host, port = target
     try:
-        with socket.create_connection((host, port), timeout=2):
+        with socket.create_connection((host, port), timeout=1):
             return target, True
     except OSError:
         return target, False
 
 
-targets = [(f"10.0.0.{i}", 22) for i in range(1, 255)]
+def main(argv):
+    if len(argv) != 2:
+        sys.exit(f"usage: python3 {sys.argv[0]} NETWORK PORT   e.g. 172.16.0.0/24 22")
+    network, port = ipaddress.ip_network(argv[0], strict=False), int(argv[1])
+    targets = [(str(ip), port) for ip in network.hosts()]
 
-with ThreadPoolExecutor(max_workers=50) as pool:
-    for (host, port), up in pool.map(is_open, targets):
-        if up:
-            print(f"{host}:{port} open")
+    with ThreadPoolExecutor(max_workers=50) as pool:
+        for (host, port), up in pool.map(is_open, targets):
+            if up:
+                print(f"{host}:{port} open")
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
+```
+
+Find your own network with `ip -4 addr`. In the iximiuz Labs playground it is `172.16.0.0/24`:
+
+```bash
+$ ip -4 -o addr show eth0
+2: eth0    inet 172.16.0.2/24 ...
+$ python3 sweep.py 172.16.0.0/24 22
+172.16.0.2:22 open
 ```
 
 > Only scan networks you own or are allowed to test.
